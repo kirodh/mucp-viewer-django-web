@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+{% block content %}
+<!-- support category list -->
+<!-- Author: Kirodh Boodhraj-->
+<h1>Categories</h1>
+
+<a href="{% url 'support:category_create' %}" class="btn btn-primary mb-3">Add Custom Category</a>
+
+<h2>Default Categories</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Weighting</th>
+            <th>User</th>
+            <th>Default</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for cat in default_categories %}
+        <tr>
+            <td>{{ cat.name }}</td>
+            <td>{{ cat.get_category_type_display }}</td>
+            <td>{{ cat.weight }}</td>
+            <td>System Default</td>
+            <td>Yes</td>
+            <td>
+                {% if cat.category_type == 'numeric' %}
+                    <a href="{% url 'support:numeric_band_list' cat.pk %}" class="btn btn-sm btn-info">Bands</a>
+                {% else %}
+                    <a href="{% url 'support:text_value_list' cat.pk %}" class="btn btn-sm btn-info">Values</a>
+                {% endif %}
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="5" class="text-center">No default categories found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h2>Your Categories</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Weighting</th>
+            <th>User</th>
+            <th>Default</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for cat in user_categories %}
+        <tr>
+            <td>{{ cat.name }}</td>
+            <td>{{ cat.get_category_type_display }}</td>
+            <td>{{ cat.weight }}</td>
+            <td>{{ cat.user.username }}</td>
+            <td>{% if cat.is_default %}Yes{% else %}No{% endif %}</td>
+            <td>
+                <a href="{% url 'support:category_update' cat.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{% url 'support:category_delete' cat.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                {% if cat.category_type == 'numeric' %}
+                    <a href="{% url 'support:numeric_band_list' cat.pk %}" class="btn btn-sm btn-info">Bands</a>
+                {% else %}
+                    <a href="{% url 'support:text_value_list' cat.pk %}" class="btn btn-sm btn-info">Values</a>
+                {% endif %}
+            </td>
+        </tr>
+    {% empty %}
+        <tr><td colspan="5" class="text-center">No custom categories found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

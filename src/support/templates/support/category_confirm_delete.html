@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Delete Category{% endblock %}
+{% block content %}
+<!-- support category confirm delete -->
+<!-- Author: Kirodh Boodhraj-->
+
+<div class="container mt-5" style="max-width: 600px;">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-danger text-white">
+            <h4 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i> Confirm Deletion</h4>
+        </div>
+        <div class="card-body text-center">
+
+            <p class="fs-5">Are you sure you want to delete "{{ object }}"?</p>
+
+
+            <form method="post" class="d-flex justify-content-center gap-3 mt-4">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger fw-bold px-4">
+                    <i class="bi bi-trash-fill"></i> Delete
+                </button>
+                <a href="{% url 'support:category_list' %}" class="btn btn-outline-secondary px-4">
+                    <i class="bi bi-x-circle"></i> Cancel
+                </a>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

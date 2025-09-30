@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+<!-- leaflet css-->
+{% block extra_css %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+{% endblock %}
+
+
+{% block content %}
+<!-- project details -->
+<!-- Author: Kirodh Boodhraj-->
+<h1>Project: {{ project.name }}</h1>
+<a href="{% url 'project:project_list' %}" class="btn btn-secondary mb-3">Back to Projects</a>
+
+<!-- Nav Tabs -->
+<ul class="nav nav-tabs" id="fileTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="csv-tab" data-bs-toggle="tab" data-bs-target="#csv" type="button" role="tab">CSV: Compartment Priorities</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="miu-tab" data-bs-toggle="tab" data-bs-target="#miu" type="button" role="tab">Excel: MIU Linked Species</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="nbal-tab" data-bs-toggle="tab" data-bs-target="#nbal" type="button" role="tab">Excel: NBAL Linked Species</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="comp_shp-tab" data-bs-toggle="tab" data-bs-target="#comp_shp" type="button" role="tab">Shapefile: Compartments</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="miu_shp-tab" data-bs-toggle="tab" data-bs-target="#miu_shp" type="button" role="tab">Shapefile: MIU</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="nbal_shp-tab" data-bs-toggle="tab" data-bs-target="#nbal_shp" type="button" role="tab">Shapefile: NBAL</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="gis_mapping-tab" data-bs-toggle="tab" data-bs-target="#gis_mapping" type="button" role="tab">Shapefile: GIS Mapping</button>
+    </li>
+</ul>
+
+<!-- Tab Content -->
+<div class="tab-content mt-3">
+    <div class="tab-pane fade show active" id="csv" role="tabpanel">{{ csv_table|safe }}</div>
+    <div class="tab-pane fade" id="miu" role="tabpanel">{{ miu_table|safe }}</div>
+    <div class="tab-pane fade" id="nbal" role="tabpanel">{{ nbal_table|safe }}</div>
+    <div class="tab-pane fade" id="comp_shp" role="tabpanel">{{ compartments_table|safe }}</div>
+    <div class="tab-pane fade" id="miu_shp" role="tabpanel">{{ miu_shp_table|safe }}</div>
+    <div class="tab-pane fade" id="nbal_shp" role="tabpanel">{{ nbal_shp_table|safe }}</div>
+    <div class="tab-pane fade" id="gis_mapping" role="tabpanel">{{ gis_mapping_table|safe }}</div>
+</div>
+
+
+<!-- leaflet js-->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Leaflet Map -->
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-info text-white fw-bold">
+      <h4 id="map-title" class="mb-0">Map</h4>
+    </div>
+    <div class="card-body">
+      <div id="map"></div>
+    </div>
+  </div>
+
+<style>
+#map {
+    width: 100%;      /* full width of container */
+    height: 60vh;    /* fixed height is required */
+}
+</style>
+
+<!-- Optional Pagination / Scroll -->
+<style>
+.dataframe {
+    width: 100%;
+    overflow-x: auto;
+    max-height: 400px;      /* scrollable by default */
+    overflow-y: auto;       /* vertical scroll */
+    display: block;
+}
+.paginated {
+    max-height: none;
+}
+</style>
+
+<button class="btn btn-sm btn-outline-secondary mt-3" onclick="togglePagination()">Toggle Scroll</button>
+
+<script>
+function togglePagination() {
+    document.querySelectorAll('.dataframe').forEach(table => {
+        table.classList.toggle('paginated');
+    });
+}
+
+// Initialize first tab
+document.addEventListener('DOMContentLoaded', function () {
+    var firstTab = new bootstrap.Tab(document.querySelector('#csv-tab'));
+    firstTab.show();
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize map
+    var map = L.map('map').setView([-33.9, 19.2], 13);
+
+    // Add base tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Function to assign random colors (can also do based on property)
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Add GeoJSON layer
+    var geojsonLayer = L.geoJSON({{ gis_mapping_geojson|safe }}, {
+        style: function(feature) {
+            return {
+                color: getRandomColor(),  // different border color
+                weight: 2,
+                fillOpacity: 0.4
+            };
+        },
+        onEachFeature: function(feature, layer) {
+            // Popup showing feature name
+            if (feature.properties && feature.properties.name) {
+                layer.bindPopup('<strong>' + feature.properties.name + '</strong>');
+            }
+
+            // Tooltip on hover
+            layer.bindTooltip(feature.properties.name, {
+                permanent: false,
+                direction: "center"
+            });
+
+            // Zoom to polygon on click
+            layer.on('click', function() {
+                map.fitBounds(layer.getBounds());
+            });
+        }
+    }).addTo(map);
+
+    // Add layer control if you have multiple layers
+    var baseLayers = {
+        "OSM": map
+    };
+
+    var overlays = {
+        "Polygons": geojsonLayer
+    };
+
+    L.control.layers(baseLayers, overlays).addTo(map);
+
+    // Ensure map tiles align correctly
+    setTimeout(function () {
+        map.invalidateSize();
+    }, 300);
+
+    // If inside a Bootstrap tab:
+    document.querySelectorAll('button[data-bs-toggle="tab"]').forEach(tabBtn => {
+        tabBtn.addEventListener('shown.bs.tab', function () {
+            map.invalidateSize();
+        });
+    });
+
+    // Optional: add scale, mouse position, etc.
+    L.control.scale().addTo(map);
+});
+</script>
+
+{% endblock %}

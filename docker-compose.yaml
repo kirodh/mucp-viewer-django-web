@@ -1,0 +1,60 @@
+services:
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: django
+    env_file:
+      - .env
+    environment:
+      - WEB_CONCURRENCY=${WEB_CONCURRENCY:-3}
+      - GUNICORN_TIMEOUT=${GUNICORN_TIMEOUT:-600}
+      - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE:-main.settings}
+    volumes:
+      - ./src/staticfiles:/vol/static
+      #- ./src/static:/vol/static
+      - ./src/media:/vol/media
+      - ./src/:/app/src/
+      - ./src/start.sh:/start.sh   # mount start.sh into container
+    ports:
+      - "8000:8000"   # internal gunicorn port (nginx will proxy to the service name)
+    entrypoint: [ "/start.sh" ]   # <-- run start.sh when container starts
+    restart: unless-stopped
+#    healthcheck:
+#      test: ["CMD-SHELL", "curl -f http://localhost:8000/health/ || exit 1"]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 5
+
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: nginx
+    env_file:
+      - .env
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+      - ./src/staticfiles:/vol/static:ro
+      - ./src/media:/vol/media:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - django
+    restart: unless-stopped
+
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email eoapps@csir.co.za -d mucp.afis.co.za --agree-tos
+
+volumes:
+  static_volume:
+  media_volume:
+  django_sqlite_data:
+

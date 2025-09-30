@@ -1,0 +1,399 @@
+{% extends "base.html" %}
+{% load static %}
+
+{# home/templates/home/support.html #}
+{% block title %}Support — MUCP Tool{% endblock %}
+
+{% block content %}
+<!-- support home -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container my-5" style="max-width: 1000px;">
+
+  <div class="d-flex align-items-center mb-4">
+    <h1 class="me-3 mb-0">Support</h1>
+    <small class="text-muted">Guidance & technical reference for filling support data</small>
+  </div>
+
+  <p class="lead text-muted">
+    The Support section contains the reference data that drives the MUCP simulation. Users should generally fill these
+    in the order shown below unless it is intended to use default values.
+    <ul>
+      <li>Growth forms</li>
+      <li>Treatment methods</li>
+      <li>Species information</li>
+      <li>Herbicides information</li>
+      <li>Clearing norms</li>
+      <li>Prioritisation model definitions</li>
+      <li>Costing models</li>
+    </ul>
+  </p>
+
+  <div class="accordion shadow-sm" id="supportAccordion">
+
+    <!-- Overview / Purpose -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-overview">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-overview"
+                aria-expanded="false" aria-controls="collapse-overview">
+          📘 Overview — MUCP tool purpose
+        </button>
+      </h2>
+      <div id="collapse-overview" class="accordion-collapse collapse" aria-labelledby="heading-overview" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            The Management Unit Control Plan (MUCP) tool is a planning system that schedules invasive species
+            treatments over a multi-year horizon (commonly 20 years). It combines spatial data (compartments,
+            mapped invaded units (MIUs), NBAL treatment units), species and treatment norms, and budget scenarios
+            to generate treatment priorities and approximate costs. The MUCP tool produces strategic schedules and
+            budget-testing scenarios rather than detailed daily contractor schedules.
+          </p>
+
+          <h6 class="mt-3">Key concepts</h6>
+          <ul>
+            <li><strong>Compartment:</strong> fixed management unit with stable boundaries used for reporting and aggregation.</li>
+            <li><strong>MIU (Mapped Invaded Unit):</strong> spatially mapped invasion units, often subdivided by species composition and density.</li>
+            <li><strong>NBAL (Treatment Unit):</strong> historic or active treatment unit; records treatments performed and their dates.</li>
+            <li><strong>Norms:</strong> person-day, reduction and densification parameters per species, growth-form, treatment method and density class.</li>
+            <li><strong>Prioritisation model:</strong> multi-criteria model (AHP-style) used to rank compartments for scheduling.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- How to fill support data (order & advice) -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-order">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-order"
+                aria-expanded="false" aria-controls="collapse-order">
+          <i class="bi bi-list-nested text-success me-2"></i>Recommended order & guidance
+        </button>
+      </h2>
+
+      <div id="collapse-order" class="accordion-collapse collapse" aria-labelledby="heading-order" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p class="mb-2">Users are advised to complete support inputs in this order. Defaults exist (APO Default); only change values if you have local knowledge or verified data.</p>
+
+          <ol>
+            <li><strong>Growth forms</strong> — define growth form types used for person-day calculations (e.g. sprouting tree, herbaceous, shrub).</li>
+            <li><strong>Treatment methods</strong> — define the names/labels of available treatment techniques (e.g. lop/prune, bark strip, cut & stump + herbicide).</li>
+            <li><strong>Species</strong> — define species catalogue entries (idens code, growth form, flow factors, initial/follow-up reduction %, densification %, treatment frequency, etc.).</li>
+            <li><strong>Herbicides (reference)</strong> — informational only at present (not used in costing). Keep for future enhancements and dosing guidance.</li>
+            <li><strong>Clearing norms</strong> — person-day norms by growth form, treatment and density classes; affects workloads and PD calculations.</li>
+            <li><strong>Prioritisation model</strong> — build or load a prioritisation profile (name it uniquely). Set category weights using the weighting panel.</li>
+            <li><strong>Cost model</strong> — define costing templates (initial/follow-up team size & cost/day, vehicle/fuel costs, user-defined costs); assign by compartment with the costing field in compartment shapefile.</li>
+          </ol>
+
+          <p class="small text-muted">Note: overriding defaults will change schedule outputs. Where in doubt, retain defaults and run sensitivity tests.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data requirements & mapping standards -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-data">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-data"
+                aria-expanded="false" aria-controls="collapse-data">
+          <i class="bi bi-geo-alt-fill text-warning me-2"></i>Spatial data & mapping standards
+        </button>
+      </h2>
+
+      <div id="collapse-data" class="accordion-collapse collapse" aria-labelledby="heading-data" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            The MUCP relies on shapefile attribute data for compartments, MIUs and NBALs. Proven mapping standards (Working for Water: "Standards for Mapping and Management of Alien Vegetation – Version 6, 2016") should be followed.
+          </p>
+
+          <h6>Minimum required attributes</h6>
+          <ul>
+            <li><strong>Compartment shapefile:</strong> <code>compt_id</code>, area (ha), slope, walk_time, drive_time, costing code, mean annual runoff (if flow estimation required), veld age, vegetation status.</li>
+            <li><strong>MIU shapefile:</strong> <code>miu_id</code>, species mix, densities, riparian flag, area.</li>
+            <li><strong>NBAL shapefile:</strong> <code>nbal_id</code>, stage/treatment date, area, species and notes. NBALs are used preferentially where they overlap compartments.</li>
+          </ul>
+
+          <p class="mb-0"><strong>Important:</strong> Compartments form the stable reporting unit; MIUs and NBALs may change as treatments proceed but compartments persist.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Growth forms -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-growth">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-growth"
+                aria-expanded="false" aria-controls="collapse-growth">
+          🌱 Growth forms (person-day classes)
+        </button>
+      </h2>
+
+      <div id="collapse-growth" class="accordion-collapse collapse" aria-labelledby="heading-growth" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            Growth forms group species by structure relevant to clearing effort. Typical types: <em>herbaceous</em>, <em>shrub</em>, <em>sprouting tree</em>, <em>seedling</em>, etc. The clearing norms and PD calculation use these categories to determine base person-day requirements.
+          </p>
+
+          <h6>What to enter</h6>
+          <ul>
+            <li>Name the growth form consistently with species records.</li>
+            <li>Ensure each species in the species table links to one growth form.</li>
+            <li>If uncertain, use default growth-form mappings supplied by the MUCP distribution.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Treatment methods -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-methods">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-methods"
+                aria-expanded="false" aria-controls="collapse-methods">
+          <i class="bi bi-hammer text-secondary me-2"></i>Treatment methods
+        </button>
+      </h2>
+
+      <div id="collapse-methods" class="accordion-collapse collapse" aria-labelledby="heading-methods" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            A treatment method describes how a species is physically/culturally/chemically controlled (examples: Lopping / Pruning, Bark Strip, Ring Bark, Fell, Basal stem + diesel). These labels are used in the clearing norms to assign PDs and to decide which costs apply.
+          </p>
+
+          <h6>Best practice</h6>
+          <ul>
+            <li>Keep method names precise and consistent (lowercasing/spacing matters for matching).</li>
+            <li>Where a species requires multiple techniques, enter them as separate treatment definitions if your workflow distinguishes them.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Species -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-species">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-species"
+                aria-expanded="false" aria-controls="collapse-species">
+          🌳 Species catalogue & parameters
+        </button>
+      </h2>
+
+      <div id="collapse-species" class="accordion-collapse collapse" aria-labelledby="heading-species" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            The tool ships with a large species list (≈415). Each species row should include:
+          </p>
+
+          <ul>
+            <li><strong>species name / species_name</strong> – display label</li>
+            <li><strong>idenscode</strong> – numeric species identifier used for mapping integrations</li>
+            <li><strong>growth_form</strong> – link to growth form table</li>
+            <li><strong>initial reduction %</strong> – expected canopy/coverage reduction following initial treatment</li>
+            <li><strong>follow-up reduction %</strong> – expected reduction in follow-up treatments</li>
+            <li><strong>treatment frequency</strong> – months between treatments (3,4,6,12,18,24) that control scheduling</li>
+            <li><strong>densification %</strong> – expected density increase where not treated</li>
+            <li><strong>flow factors</strong> – values 0–1 for different life stages (young, seedling, coppice, mature optimal / sub-optimal)</li>
+          </ul>
+
+          <p class="text-muted small">These parameters directly determine yearly density evolution, workload (person-days) and flow reduction estimates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Herbicides (informational) -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-herbicides">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-herbicides"
+                aria-expanded="false" aria-controls="collapse-herbicides">
+          <i class="bi bi-droplet-fill text-muted me-2"></i>Herbicides (reference)
+        </button>
+      </h2>
+
+      <div id="collapse-herbicides" class="accordion-collapse collapse" aria-labelledby="heading-herbicides" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            Herbicide entries are included for user reference only. At present these are not used in cost calculations because herbicide choice and dosage are species- and context-specific and often require expert judgement.
+          </p>
+          <p class="mb-0">Keep the list up to date for future extensions where herbicide costs or rules may be incorporated.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clearing norms -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-norms">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-norms"
+                aria-expanded="false" aria-controls="collapse-norms">
+          <i class="bi bi-gear-fill text-primary me-2"></i>Clearing norms (APO defaults & user overrides)
+        </button>
+      </h2>
+
+      <div id="collapse-norms" class="accordion-collapse collapse" aria-labelledby="heading-norms" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            Clearing norms (APO Default) provide person-day standards and workload multipliers by growth form, treatment method and density class. They are central to calculating PD requirements and the daily workloads used in costing.
+          </p>
+
+          <h6>Guidance</h6>
+          <ul>
+            <li>New users: retain APO Default unless you have verifiable local measurements.</li>
+            <li>Advanced: modify norms per growth form and density classes if you have field-effort data.</li>
+            <li>The tool applies slope_factor, riparian/landscape adjustments and other modifiers when computing adjusted PDs.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prioritisation model -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-prio">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-prio"
+                aria-expanded="false" aria-controls="collapse-prio">
+          ⬆️ Prioritisation model & categories
+        </button>
+      </h2>
+
+      <div id="collapse-prio" class="accordion-collapse collapse" aria-labelledby="heading-prio" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            The prioritisation model ranks compartments for scheduling based on weighted criteria. The tool supports an AHP-like approach: select categories, set weights, and define numeric bands or text values (for categorical fields).
+          </p>
+
+          <h6>Recommendation</h6>
+          <ul>
+            <li>Keep the number of active criteria concise (≈ 5–8) to avoid user fatigue when weighting.</li>
+            <li>Use spatial datasets (runoff, slope, veld age, vegetation status) to populate numeric categories.</li>
+            <li>Each category should include ranges (for numeric) or a set of allowed text values (for categorical).</li>
+          </ul>
+
+          <h6 class="mt-2">Predefined categories</h6>
+          <p class="small text-muted mb-0">The MUCP Tool includes 26 predefined prioritisation categories (examples below). Use them or create project-specific subsets:</p>
+          <ul class="mb-0">
+            <li><strong>Density, Runoff, Elevation, Rain, Veld Age, Slope</strong> — numeric ranges used to compute numeric priorities.</li>
+            <li><strong>Ownership, Vegetation status, River status, Zone</strong> — categorical fields where text-values map to priorities.</li>
+            <li>Other categories include: Aggressiveness, Biodiversity, Erosion, Forage, Fuel load, Invasion status, Products, Quality, Seepage, Siltation, Soil, Status, Stress, Tourism, Treatments.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cost models -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-cost">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-cost"
+                aria-expanded="false" aria-controls="collapse-cost">
+          <i class="bi bi-currency-exchange text-secondary me-2"></i>Costing models & mapping
+        </button>
+      </h2>
+
+      <div id="collapse-cost" class="accordion-collapse collapse" aria-labelledby="heading-cost" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            Costing models specify team sizes and daily rates for initial and follow-up treatments, vehicle and fuel costs and user-defined day rates. Assign a costing model to each compartment using the compartment shapefile's costing field.
+          </p>
+
+          <h6>Notes</h6>
+          <ul>
+            <li>If a compartment has an NBAL, NBAL attributes are used in preference to MIU attributes to estimate costs.</li>
+            <li>Special models (e.g. “Inspection”) can be defined for activities without field teams (inspection-only daily cost).</li>
+            <li>Ensure your costing table contains a unique model name used by the compartment attribute table.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Using the tool & interpretation -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-usage">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-usage"
+                aria-expanded="false" aria-controls="collapse-usage">
+          <i class="bi bi-play-circle-fill text-primary me-2"></i>Using the Support data in the MUCP workflow
+        </button>
+      </h2>
+
+      <div id="collapse-usage" class="accordion-collapse collapse" aria-labelledby="heading-usage" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <p>
+            Typical workflow:
+          </p>
+          <ol>
+            <li>Prepare and validate shapefiles (compartments, MIU, NBAL).</li>
+            <li>Load or edit support tables in the order: growth form → treatment method → species → herbicides → clearing norms → prioritisation → cost models.</li>
+            <li>Run prioritisation to get compartment ranks (check weighting sliders and ranges).</li>
+            <li>Run costing & scenario simulations. Review outputs: yearly PD, density evolution and costs.</li>
+            <li>Adjust support inputs and budgets, then re-run to test sensitivity.</li>
+          </ol>
+
+          <h6 class="mt-2">Interpretation tips</h6>
+          <ul>
+            <li>Large changes to species parameters or norms can dramatically change priority and cost outcomes; test in small steps.</li>
+            <li>Use the “optimal” budget run to estimate full cost for treating all entries — then compare constrained budgets to prioritise delivery.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best practice and troubleshooting -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-troubleshoot">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-troubleshoot"
+                aria-expanded="false" aria-controls="collapse-troubleshoot">
+          🛠️ Best practice & troubleshooting
+        </button>
+      </h2>
+
+      <div id="collapse-troubleshoot" class="accordion-collapse collapse" aria-labelledby="heading-troubleshoot" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <h6>Mapping & data checks</h6>
+          <ul>
+            <li>Ensure compartment IDs in the shapefile match IDs used in other inputs (MIU, NBAL and planning spreadsheets).</li>
+            <li>Validate numeric ranges (slope units, runoff units) and data types before running the model.</li>
+            <li>Remove duplicate or orphan compartment-only rows where MIU/NBAL entries exist to avoid double-counting.</li>
+          </ul>
+
+          <h6 class="mt-2">Common issues</h6>
+          <ul>
+            <li>Missing prioritisation categories or mis-typed category names → will cause unexpected ranking behavior.</li>
+            <li>Species without growth_form mapping → produces default PD behavior (verify species mapping).</li>
+            <li>Cost model name mismatches between compartments and costing table → results in missing costing parameters (check spelling and case sensitivity).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick references / links -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-links">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-links"
+                aria-expanded="false" aria-controls="collapse-links">
+          <i class="bi bi-link-45deg text-secondary me-2"></i>Quick references & manuals
+        </button>
+      </h2>
+
+      <div id="collapse-links" class="accordion-collapse collapse" aria-labelledby="heading-links" data-bs-parent="#supportAccordion">
+        <div class="accordion-body">
+          <ul class="list-unstyled">
+            <li><a href="{% static 'pdfs/MUCP_Tool_Guideline_Version 2.00.001-1.pdf' %}" target="_blank">MUCP Tool - User manual (PDF)</a></li>
+          </ul>
+          <br>
+          <p>Many thanks to Greg Forsyth for developing the MUCP manual of which the above information was derived.</p>
+        </div>
+      </div>
+    </div>
+
+  </div> {# End accordion #}
+
+  <div class="mt-4 small text-muted">
+    <strong>Note:</strong> Defaults are provided for convenience; use them if you lack local field measurements. Always keep backup copies of your support tables before editing.
+  </div>
+</div>
+{% endblock %}
+

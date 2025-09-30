@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Planning cost mapping -->
+<!-- Author: Kirodh Boodhraj-->
+
+<h1>Define Costing Mapping for Planning #{{ planning.pk }}</h1>
+
+<div class="container mt-5" style="max-width: 700px;">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Cost Mapping Form</h4>
+        </div>
+        <div class="card-body">
+
+            <!-- Cost Mapping Form -->
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    {{ field.label_tag }} {{ field }}
+                    {% if field.errors %}
+                    <div class="text-danger">
+                        {% for error in field.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                <div class="d-flex justify-content-between mt-4">
+
+                    <a href="{% url 'planning:planning_list' %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancel
+                    </a>
+                    <button type="submit" class="btn btn-success fw-bold">
+                        <i class="bi bi-check-circle"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

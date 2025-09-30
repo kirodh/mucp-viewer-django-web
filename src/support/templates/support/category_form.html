@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Category Form{% endblock %}
+{% block content %}
+<!-- support category create -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container mt-5" style="max-width: 700px;">
+    <div class="card shadow-sm border-0 rounded-3">
+
+
+        <h1>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Category</h1>
+
+        <div class="card-body">
+
+            <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.as_p }}
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+
+                    <a href="{% url 'support:category_list' %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to List
+                    </a>
+
+                    <button type="submit" class="btn btn-success fw-bold">
+                        <i class="bi bi-check-circle"></i> Save
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

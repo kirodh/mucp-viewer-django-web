@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Text Priority Values for {{ category.name }}{% endblock %}
+{% block content %}
+<!-- support text value priority list -->
+<!-- Author: Kirodh Boodhraj-->
+<h1>Text Priority Values for "{{ category.name }}"</h1>
+{% if category.user %}
+<a href="{% url 'support:text_value_create' category.pk %}" class="btn btn-primary mb-3">Add Priority Value</a>
+{% endif %}
+
+<a href="{% url 'support:category_list' %}" class="btn btn-secondary mb-3">Back to Categories</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Text Value</th>
+            <th>Priority</th>
+            {% if category.user %}
+            <th>Actions</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for val in values %}
+        <tr>
+            <td>{{ val.text_value }}</td>
+            <td>{{ val.priority }}</td>
+            {% if category.user %}
+            <td>
+                <a href="{% url 'support:text_value_update' val.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{% url 'support:text_value_delete' val.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+            {% endif %}
+        </tr>
+    {% empty %}
+        <tr><td colspan="3" class="text-center">No values found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

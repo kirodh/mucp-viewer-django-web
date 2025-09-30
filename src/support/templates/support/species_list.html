@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- support species list -->
+<!-- Author: Kirodh Boodhraj-->
+<h2>Species Data</h2>
+<br>
+<br>
+<br>
+<p>You can search for a species here:</p>
+<form method="get" class="mb-3">
+    <input type="text" name="q" value="{{ search_query }}" placeholder="Search species..." class="form-control" />
+</form>
+<br>
+<br>
+<h4>Default Species</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Species Name</th>
+            <th>English</th>
+            <th>Afrikaans</th>
+            <th>Growth Form</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in default_page %}
+            <tr>
+                <td>{{ s.species_name|lower|capfirst }}</td>
+                <td>{{ s.english_name }}</td>
+                <td>{{ s.afrikaans_name }}</td>
+                <td>{{ s.growth_form }}</td>
+                <td>
+                    <a href="{% url 'support:species_detail' s.pk %}" class="btn btn-sm btn-info">View</a>
+                </td>
+
+            </tr>
+        {% empty %}
+            <tr><td colspan="4">No default species found.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="pagination">{{ default_page.paginator.num_pages }} pages | Page {{ default_page.number }}</div>
+<!-- Pagination for Default Species -->
+<nav>
+  <ul class="pagination">
+    {% if default_page.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?default_page={{ default_page.previous_page_number }}&user_page={{ user_page.number }}&q={{ search_query }}">Previous</a>
+      </li>
+    {% endif %}
+
+    {% for num in default_page.paginator.page_range %}
+      <li class="page-item {% if num == default_page.number %}active{% endif %}">
+        <a class="page-link" href="?default_page={{ num }}&user_page={{ user_page.number }}&q={{ search_query }}">{{ num }}</a>
+      </li>
+    {% endfor %}
+
+    {% if default_page.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?default_page={{ default_page.next_page_number }}&user_page={{ user_page.number }}&q={{ search_query }}">Next</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+<br>
+<br>
+<br>
+<h4>Your Species</h4>
+<a class="btn btn-success mb-2" href="{% url 'support:species_add' %}">Add Species</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Species Name</th>
+            <th>English</th>
+            <th>Afrikaans</th>
+            <th>Growth Form</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in user_page %}
+            <tr>
+                <td>{{ s.species_name|lower|capfirst }}</td>
+                <td>{{ s.english_name }}</td>
+                <td>{{ s.afrikaans_name }}</td>
+                <td>{{ s.growth_form }}</td>
+                <td>
+                    <a href="{% url 'support:species_detail' s.pk %}" class="btn btn-sm btn-info">View</a>
+                    <a href="{% url 'support:species_edit' s.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{% url 'support:species_delete' s.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="5">You have not added any species.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="pagination">{{ user_page.paginator.num_pages }} pages | Page {{ user_page.number }}</div>
+
+<!-- Pagination for User Species -->
+<nav>
+  <ul class="pagination">
+    {% if user_page.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?user_page={{ user_page.previous_page_number }}&default_page={{ default_page.number }}&q={{ search_query }}">Previous</a>
+      </li>
+    {% endif %}
+
+    {% for num in user_page.paginator.page_range %}
+      <li class="page-item {% if num == user_page.number %}active{% endif %}">
+        <a class="page-link" href="?user_page={{ num }}&default_page={{ default_page.number }}&q={{ search_query }}">{{ num }}</a>
+      </li>
+    {% endfor %}
+
+    {% if user_page.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?user_page={{ user_page.next_page_number }}&default_page={{ default_page.number }}&q={{ search_query }}">Next</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+
+{% endblock %}

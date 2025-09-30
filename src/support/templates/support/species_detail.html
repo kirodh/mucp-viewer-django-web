@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- support species details -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="card">
+    <div class="card-header">
+        <h3>{{ species.species_name|lower|capfirst }}</h3>
+    </div>
+    <div class="card-body">
+        <p><strong>Genus:</strong> {{ species.genus|lower|capfirst }}</p>
+        <p><strong>English Name:</strong> {{ species.english_name }}</p>
+        <p><strong>Afrikaans Name:</strong> {{ species.afrikaans_name }}</p>
+        <p><strong>Growth Form:</strong> {{ species.growth_form }}</p>
+
+        <h5>Provinces:</h5>
+        <ul>
+            {% if species.WC %}<li>Western Cape</li>{% endif %}
+            {% if species.NC %}<li>Northern Cape</li>{% endif %}
+            {% if species.KZN %}<li>KwaZulu-Natal</li>{% endif %}
+            {% if species.GTG %}<li>Gauteng</li>{% endif %}
+            {% if species.MPL %}<li>Mpumalanga</li>{% endif %}
+            {% if species.FS %}<li>Free State</li>{% endif %}
+            {% if species.EC %}<li>Eastern Cape</li>{% endif %}
+            {% if species.LMP %}<li>Limpopo</li>{% endif %}
+            {% if species.NW %}<li>North West</li>{% endif %}
+        </ul>
+
+        <h5>Treatment Data:</h5>
+        <p><strong>Initial Reduction:</strong> {{ species.initial_reduction }}</p>
+        <p><strong>Follow-up Reduction:</strong> {{ species.follow_up_reduction }}</p>
+        <p><strong>Treatment Frequency:</strong> {{ species.treatment_frequency }}</p>
+        <p><strong>Densification:</strong> {{ species.densification }}</p>
+        <p><strong>Flow Optimal:</strong> {{ species.flow_optimal }}</p>
+        <p><strong>Flow Sub-optimal:</strong> {{ species.flow_sub_optimal }}</p>
+        <p><strong>Flow Young:</strong> {{ species.flow_young }}</p>
+        <p><strong>Flow Seedling:</strong> {{ species.flow_seedling }}</p>
+        <p><strong>Flow Coppice:</strong> {{ species.flow_coppice }}</p>
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'support:species_list' %}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Back
+        </a>
+    </div>
+</div>
+{% endblock %}

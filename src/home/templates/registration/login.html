@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<!-- login page -->
+<!-- Author: Kirodh Boodhraj-->
+
+<h2>Login</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+<br>
+<br>
+<br>
+<p>
+    Don't have an account?
+    <a href="{% url 'home:register' %}">Register here</a>.
+</p>
+{% endblock %}

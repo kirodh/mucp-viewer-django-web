@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Planning{% endblock %}
+
+{% block content %}
+<!-- planning home -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container mt-5">
+    <h1 class="mb-4">Planning</h1>
+    <p class="lead">
+        The <strong>Management Unit Control Plan (MUCP)</strong> tool allows different annual budgets
+        to be applied over a period of up to 20 years. This includes an optimal (unlimited) budget,
+        which is estimated by the tool based on the number of treatments each invaded area needs
+        to reach a maintenance level, and up to four user-defined annual budget ceilings.
+    </p>
+
+    <div class="accordion" id="planningAccordion">
+
+        <!-- How to specify planning parameters -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingParameters">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseParameters" aria-expanded="false" aria-controls="collapseParameters">
+                    📋 How to Specify Planning Parameters
+                </button>
+            </h2>
+            <div id="collapseParameters" class="accordion-collapse collapse" aria-labelledby="headingParameters" data-bs-parent="#planningAccordion">
+                <div class="accordion-body">
+                    <p>
+                        Planning parameters define the scope and assumptions of the simulation.
+                        They include project details, budget ceilings, escalation rates, and operational constraints.
+                        Each parameter must be carefully specified to ensure realistic results.
+                        Incorrect or unrealistic values (e.g., working days above 365 or hours above 24)
+                        will lead to invalid simulations.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concepts and Definitions -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingConcepts">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConcepts" aria-expanded="false" aria-controls="collapseConcepts">
+                    📖 Concepts and Definitions
+                </button>
+            </h2>
+            <div id="collapseConcepts" class="accordion-collapse collapse" aria-labelledby="headingConcepts" data-bs-parent="#planningAccordion">
+                <div class="accordion-body">
+                    <ul>
+                        <li><strong>Optimal Budget (5th Budget):</strong> Represents an <em>unlimited</em> budget. If all resources were available, compartments could be cleared to their full value every year without financial limits. This budget is calculated by summing the total clearing values unconstrained — essentially, “if you had all the money in the world”.</li>
+                        <li><strong>Budget Ceilings:</strong> User-defined annual spending caps (up to 4). These simulate financial limitations.</li>
+                        <li><strong>Escalation:</strong> Annual percentage increase applied to costs and/or budgets to account for inflation or rising resource needs.</li>
+                        <li><strong>Operational Constraints:</strong> Rules such as maximum working days and hours per year that affect the rate of treatment.</li>
+                        <li><strong>Currency:</strong> All financial results are displayed in the selected currency (Rand, Euro, Dollar, Pound, or Yen).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Details -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingProject">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProject" aria-expanded="false" aria-controls="collapseProject">
+                    🏗️ Project Details
+                </button>
+            </h2>
+            <div id="collapseProject" class="accordion-collapse collapse" aria-labelledby="headingProject" data-bs-parent="#planningAccordion">
+                <div class="accordion-body">
+                    <ul>
+                        <li><strong>Project Name:</strong> Selected from existing projects in the system.</li>
+                        <li><strong>Clearing Norm Set:</strong> Defines the baseline assumptions for clearing costs and effort.</li>
+                        <li><strong>Categories:</strong> Optional grouping of activities or areas. Maximum of 6 categories can be defined.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget Plans -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingBudget">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBudget" aria-expanded="false" aria-controls="collapseBudget">
+                    💰 Budget Plans
+                </button>
+            </h2>
+            <div id="collapseBudget" class="accordion-collapse collapse" aria-labelledby="headingBudget" data-bs-parent="#planningAccordion">
+                <div class="accordion-body">
+                    <p>
+                        The MUCP tool supports up to 4 budget plans, each representing an annual ceiling value.
+                        Budgets are applied annually, and can be escalated each year using the escalation parameters.
+                    </p>
+                    <ul>
+                        <li><strong>Budget Plan 1–4:</strong> User-defined annual ceilings. If left blank, the simulation ignores that budget scenario.</li>
+                        <li><strong>Optimized Budget (5th Budget):</strong> An automatically calculated, unconstrained budget that assumes full clearing each year. This represents the theoretical maximum effort scenario.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Escalation Plans -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEscalation">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEscalation" aria-expanded="false" aria-controls="collapseEscalation">
+                    📈 Escalation Plans
+                </button>
+            </h2>
+            <div id="collapseEscalation" class="accordion-collapse collapse" aria-labelledby="headingEscalation" data-bs-parent="#planningAccordion">
+                <div class="accordion-body">
+                    <p>
+                        Escalation rates allow budget ceilings to increase annually, reflecting inflation or resource growth.
+                    </p>
+                    <ul>
+                        <li><strong>Escalation % 1–4:</strong> Annual increase in costs or budgets. Enter as a percentage (e.g., 5 for 5%).</li>
+                    </ul>
+                    <p>
+                        <strong>Formula:</strong>
+                        If the base budget is <code>B</code>, escalation rate is <code>r%</code>, and the year is <code>n</code>:
+                    </p>
+                    <pre><code>Budget in year n = B × (1 + r/100)^(n-1)</code></pre>
+                    <p>
+                        Example: For a base budget of R1,000,000 with a 5% escalation:
+                        Year 1 = 1,000,000
+                        Year 2 = 1,050,000
+                        Year 3 = 1,102,500, etc.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Operational Settings -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOperational">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOperational" aria-expanded="false" aria-controls="collapseOperational">
+                    ⚙️ Operational Settings
+                </button>
+            </h2>
+            <div id="collapseOperational" class="accordion-collapse collapse" aria-labelledby="headingOperational" data-bs-parent="#planningAccordion">
+                <div class="accordion-body">
+                    <ul>
+                        <li><strong>Standard Working Day Hours:</strong> Maximum 24 hours per day.</li>
+                        <li><strong>Standard Working Days per Year:</strong> Maximum 365 days per year.</li>
+                        <li><strong>Start Year:</strong> Must be greater than or equal to 1900.</li>
+                        <li><strong>Years to Run:</strong> Simulation period between 1 and 50 years.</li>
+                        <li><strong>Currency:</strong> Financial results are displayed in the selected currency (Rand, Euro, Dollar, Pound, Yen).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Save Results -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSave">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSave" aria-expanded="false" aria-controls="collapseSave">
+                    💾 Save Results
+                </button>
+            </h2>
+            <div id="collapseSave" class="accordion-collapse collapse" aria-labelledby="headingSave" data-bs-parent="#planningAccordion">
+                <div class="accordion-body">
+                    <p>
+                        Users can choose whether to save results or just run the simulation:
+                    </p>
+                    <ul>
+                        <li><strong>Save Results:</strong> Stores simulation outputs for later analysis.</li>
+                        <li><strong>Run Without Saving:</strong> Executes the simulation for immediate results without storing them.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Notes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNotes">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNotes" aria-expanded="false" aria-controls="collapseNotes">
+                    📝 Additional Notes
+                </button>
+            </h2>
+            <div id="collapseNotes" class="accordion-collapse collapse" aria-labelledby="headingNotes" data-bs-parent="#planningAccordion">
+                <div class="accordion-body">
+                    <p>
+                        The MUCP tool integrates <strong>financial, operational, and ecological data</strong>
+                        to provide projections of clearing outcomes under different funding scenarios.
+                        Users should review assumptions carefully, as small changes in parameters
+                        (e.g., escalation rates or working days) can significantly impact results.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Delete Text Priority Value{% endblock %}
+{% block content %}
+<!-- support text value priority confirm delete -->
+<!-- Author: Kirodh Boodhraj-->
+<h1>Delete Text Priority Value</h1>
+<p>Are you sure you want to delete "{{ object }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <a href="{% url 'support:text_value_list' object.category.pk %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

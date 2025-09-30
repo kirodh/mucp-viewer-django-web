@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- planning details -->
+<!-- Author: Kirodh Boodhraj-->
+
+<h2>Planning: {{ planning.name }} Details</h2>
+<br>
+
+<a href="{% url 'planning:planning_list' %}" class="btn btn-sm btn-secondary">
+  Back to List
+</a>
+<br>
+<br>
+<!-- Planning details -->
+<div class="card mb-3">
+    <div class="card-body">
+        <h5>Budget Plans & Escalations</h5>
+        <ul>
+            <li>Budget 1: {{ planning.currency }} {{ planning.budget_plan_1 }} (Esc: {{ planning.escalation_plan_1 }}%)</li>
+            <li>Budget 2: {{ planning.currency }} {{ planning.budget_plan_2 }} (Esc: {{ planning.escalation_plan_2 }}%)</li>
+            <li>Budget 3: {{ planning.currency }} {{ planning.budget_plan_3 }} (Esc: {{ planning.escalation_plan_3 }}%)</li>
+            <li>Budget 4: {{ planning.currency }} {{ planning.budget_plan_4 }} (Esc: {{ planning.escalation_plan_4 }}%)</li>
+        </ul>
+
+        <p><strong>Working Day Hours:</strong> {{ planning.standard_working_day }}</p>
+        <p><strong>Working Days in Year:</strong> {{ planning.standard_working_year_days }}</p>
+        <p><strong>Start Year:</strong> {{ planning.start_year }}</p>
+        <p><strong>Years to Run:</strong> {{ planning.years_to_run }}</p>
+        <p><strong>Currency:</strong> {{ planning.currency }}</p>
+        <p><strong>Save Results:</strong> {{ planning.save_results|yesno:"Yes,No" }}</p>
+
+        <h5>Categories</h5>
+        <ul>
+            {% for pc in planning.planning_categories.all %}
+            <li>{{ pc.category.name }} (Weight: {{ pc.category.weight }})</li>
+            {% empty %}
+            <li>No categories assigned.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% if has_complete_mapping %}
+  <p class="text-success">✅ Costing mapping is complete.</p>
+  <ul>
+    {% for mapping in planning.costing_mappings.all %}
+    <li>{{ mapping.costing_value }} → {{ mapping.costing_model }}</li>
+    {% endfor %}
+  </ul>
+
+{% else %}
+  <p class="text-danger">⚠️ Costing mapping is incomplete.</p>
+  <a href="{% url 'planning:define_costing_mapping' planning.pk %}" class="btn btn-sm btn-warning">
+    Define Costing Mapping Now
+  </a>
+{% endif %}
+
+{% endblock %}

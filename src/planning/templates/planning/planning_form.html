@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- planning form -->
+<!-- Author: Kirodh Boodhraj-->
+
+<h1>New Planning</h1>
+
+<div class="container mt-5" style="max-width: 700px;">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">New Planning Form</h4>
+        </div>
+        <div class="card-body">
+
+            <!-- Planning Form -->
+            <form method="post" class="p-4 bg-white shadow rounded">
+                {% csrf_token %}
+
+                <!-- Project Details -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        <i class="bi bi-folder"></i> Project Details
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            {{ form.project.label_tag }}
+                            {{ form.project }}
+                            {% if form.project.errors %}
+                            <div class="text-danger small">
+                                {% for error in form.project.errors %}
+                                {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.clearing_norm_model.label_tag }}
+                            {{ form.clearing_norm_model }}
+                            {% if form.clearing_norm_model.errors %}
+                            <div class="text-danger small">
+                                {% for error in form.clearing_norm_model.errors %}
+                                {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Categories</label>
+                            {{ form.categories }}
+                            {% if form.categories.errors %}
+                            <div class="text-danger small">
+                                {% for error in form.categories.errors %}
+                                {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budgets -->
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white fw-bold">
+                        <i class="bi bi-cash-coin"></i> Budget Plans
+                    </div>
+                    <div class="col-md-3">{{ form.budget_plan_1.label_tag }} {{ form.budget_plan_1 }}</div>
+                    <div class="col-md-3">{{ form.budget_plan_2.label_tag }} {{ form.budget_plan_2 }}</div>
+                    <div class="col-md-3">{{ form.budget_plan_3.label_tag }} {{ form.budget_plan_3 }}</div>
+                    <div class="col-md-3">{{ form.budget_plan_4.label_tag }} {{ form.budget_plan_4 }}</div>
+                </div>
+
+                <!-- Escalations -->
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark fw-bold">
+                        <i class="bi bi-graph-up-arrow"></i> Escalation Plans
+                    </div>
+                    <div class="col-md-3">{{ form.escalation_plan_1.label_tag }} {{ form.escalation_plan_1 }}</div>
+                    <div class="col-md-3">{{ form.escalation_plan_2.label_tag }} {{ form.escalation_plan_2 }}</div>
+                    <div class="col-md-3">{{ form.escalation_plan_3.label_tag }} {{ form.escalation_plan_3 }}</div>
+                    <div class="col-md-3">{{ form.escalation_plan_4.label_tag }} {{ form.escalation_plan_4 }}</div>
+                </div>
+
+                <!-- Operational Settings -->
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white fw-bold">
+                        <i class="bi bi-gear"></i> Operational Settings
+                    </div>
+                    <div class="col-md-6">{{ form.standard_working_day.label_tag }} {{ form.standard_working_day }}</div>
+                    <div class="col-md-6">{{ form.standard_working_year_days.label_tag }} {{ form.standard_working_year_days }}</div>
+                    <div class="col-md-4">{{ form.start_year.label_tag }} {{ form.start_year }}</div>
+                    <div class="col-md-4">{{ form.years_to_run.label_tag }} {{ form.years_to_run }}</div>
+                    <div class="col-md-4">{{ form.currency.label_tag }} {{ form.currency }}</div>
+                </div>
+
+                <!-- Save Results -->
+                <div class="form-check mb-4">
+                    {{ form.save_results }} {{ form.save_results.label_tag }}
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'planning:planning_list' %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to Planning List
+                    </a>
+                    <button type="submit" class="btn btn-success fw-bold">
+                        <i class="bi bi-check-circle"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

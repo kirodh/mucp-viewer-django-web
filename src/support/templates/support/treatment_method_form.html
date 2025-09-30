@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- support treatment method create -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container mt-5" style="max-width: 700px;">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">{{ action }} Treatment Method</h4>
+        </div>
+        <div class="card-body">
+
+            <!-- Treatment method -->
+
+            <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.as_p }}
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="{% url 'support:treatment_method_list' %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to list
+                    </a>
+                    <button type="submit" class="btn btn-success fw-bold">
+                        <i class="bi bi-check-circle"></i> {{ action }}
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

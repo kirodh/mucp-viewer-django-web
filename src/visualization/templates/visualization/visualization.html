@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% load static %}
+
+{# visualization/templates/visualization/visualization.html #}
+{% block title %}Visualization — MUCP Tool{% endblock %}
+
+{% block content %}
+<!-- visualization home -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container my-5" style="max-width: 1000px;">
+
+  <div class="d-flex align-items-center mb-4">
+    <h1 class="me-3 mb-0">Visualization</h1>
+    <small class="text-muted">Interactive charts, tables, maps & downloadable reports</small>
+  </div>
+
+  <p class="lead text-muted">
+    The Visualization section of the MUCP Tool provides a comprehensive way to explore and interpret results.
+    It combines interactive charts, tables, filters, and a spatial map interface. Users can also generate
+    a detailed PDF report containing all results and inputs for archival and communication purposes.
+  </p>
+
+  <div class="accordion shadow-sm" id="visualizationAccordion">
+
+    <!-- Overview -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-overview">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-overview"
+                aria-expanded="false" aria-controls="collapse-overview">
+          📘 Overview — Visualization purpose
+        </button>
+      </h2>
+      <div id="collapse-overview" class="accordion-collapse collapse" aria-labelledby="heading-overview" data-bs-parent="#visualizationAccordion">
+        <div class="accordion-body">
+          <p>
+            The Visualization page is the central hub for exploring MUCP simulation results.
+            It brings together:
+          </p>
+          <ul>
+            <li><strong>Charts</strong> — interactive line and bar graphs for density, person-days, flow and costs.</li>
+            <li><strong>Tables</strong> — tabulated outputs per compartment, MIU or NBAL with year-specific values.</li>
+            <li><strong>Filters</strong> — tools for narrowing down results by year, budget or level of analysis.</li>
+            <li><strong>Map</strong> — a spatial interface to view and click on compartments, MIUs and NBALs.</li>
+            <li><strong>PDF Report</strong> — a one-click export to generate a complete report with parameters, charts and tables.</li>
+          </ul>
+          <p class="mb-0">Use these components together to understand how budgets, density and prioritisation evolve over time and across management units.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-charts">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-charts"
+                aria-expanded="false" aria-controls="collapse-charts">
+          <i class="bi bi-graph-up text-success me-2"></i>Charts — Density, Person-Days, Flow & Costing
+        </button>
+      </h2>
+      <div id="collapse-charts" class="accordion-collapse collapse" aria-labelledby="heading-charts" data-bs-parent="#visualizationAccordion">
+        <div class="accordion-body">
+          <p>
+            Several interactive graphs are provided to track change over time:
+          </p>
+          <ul>
+            <li><strong>Line graphs:</strong> for <em>Density</em>, <em>Person-Days</em> and <em>Flow</em>. These show yearly changes and allow zooming for detailed inspection.</li>
+            <li><strong>Bar graphs:</strong> for <em>Costing</em>. Five budget scenarios (<em>Budget 1, 2, 3, 4</em> and <em>Optimal</em>) are displayed per year.</li>
+            <li><strong>Optimal budget:</strong> always shown as a dashed black line for quick comparison across graphs.</li>
+          </ul>
+          <p>
+            Hovering over a year reveals exact values for all budget scenarios in a popup. This makes it easy to compare how constrained budgets deviate from the optimal scenario.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-filters">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-filters"
+                aria-expanded="false" aria-controls="collapse-filters">
+          <i class="bi bi-funnel-fill text-warning me-2"></i>Filters — Refine your results
+        </button>
+      </h2>
+      <div id="collapse-filters" class="accordion-collapse collapse" aria-labelledby="heading-filters" data-bs-parent="#visualizationAccordion">
+        <div class="accordion-body">
+          <p>
+            Filters allow users to narrow down and customize what is displayed. You can filter results by:
+          </p>
+          <ul>
+            <li><strong>Year</strong> — choose which simulation year(s) to display.</li>
+            <li><strong>Budget</strong> — select which budget scenario(s) to view on charts and tables.</li>
+            <li><strong>Level</strong> — display results by <em>Compartment</em>, <em>MIU</em> or <em>NBAL</em>.</li>
+          </ul>
+          <p class="mb-0">These filters can be applied in combination, enabling precise exploration of outcomes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tables -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-tables">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-tables"
+                aria-expanded="false" aria-controls="collapse-tables">
+          <i class="bi bi-table text-info me-2"></i>Tables — Results per unit
+        </button>
+      </h2>
+      <div id="collapse-tables" class="accordion-collapse collapse" aria-labelledby="heading-tables" data-bs-parent="#visualizationAccordion">
+        <div class="accordion-body">
+          <p>
+            Tabulated results provide a structured overview of outputs per compartment, MIU or NBAL.
+            Each table includes:
+          </p>
+          <ul>
+            <li><strong>Density</strong></li>
+            <li><strong>Person-Days</strong></li>
+            <li><strong>Prioritisation</strong></li>
+            <li><strong>Flow</strong></li>
+            <li><strong>Cost</strong></li>
+          </ul>
+          <p>
+            Tables also indicate whether a unit was cleared for a given year, allowing quick assessment of treatment history alongside numerical values.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-map">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-map"
+                aria-expanded="false" aria-controls="collapse-map">
+          🗺️ Map — Spatial exploration
+        </button>
+      </h2>
+      <div id="collapse-map" class="accordion-collapse collapse" aria-labelledby="heading-map" data-bs-parent="#visualizationAccordion">
+        <div class="accordion-body">
+          <p>
+            The interactive map shows the geometry of compartments, MIUs and NBALs. Clicking on a geometry reveals:
+          </p>
+          <ul>
+            <li><strong>Identifiers:</strong> Compartment ID, MIU ID and NBAL ID.</li>
+            <li><strong>Year:</strong> the simulation year for the displayed results.</li>
+            <li><strong>Results:</strong> density, flow, cost, prioritisation score and person-days for that geometry.</li>
+          </ul>
+          <p class="mb-0">This provides a spatial dimension to complement charts and tables, ensuring managers can connect outcomes to physical locations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PDF Report -->
+    <div class="accordion-item border-0">
+      <h2 class="accordion-header" id="heading-pdf">
+        <button class="accordion-button collapsed fw-bold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapse-pdf"
+                aria-expanded="false" aria-controls="collapse-pdf">
+          <i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i>PDF Report — Comprehensive summary
+        </button>
+      </h2>
+      <div id="collapse-pdf" class="accordion-collapse collapse" aria-labelledby="heading-pdf" data-bs-parent="#visualizationAccordion">
+        <div class="accordion-body">
+          <p>
+            A full PDF report can be generated at any time, containing all case parameters and outputs:
+          </p>
+          <ul>
+            <li><strong>Project details:</strong> name, planning parameters, cost models and prioritisation categories used.</li>
+            <li><strong>Budgets:</strong> values for each budget scenario across the years.</li>
+            <li><strong>Charts:</strong> line graphs (density, person-days, flow) and bar graphs (costing).</li>
+            <li><strong>Tables:</strong> detailed results for compartments, MIUs and NBALs with density, person-days, prioritisation, flow and cost values.</li>
+          </ul>
+          <p class="mb-0">This export is ideal for sharing with stakeholders, funders and project teams, ensuring transparent communication of assumptions and outcomes.</p>
+        </div>
+      </div>
+    </div>
+
+  </div> {# End accordion #}
+
+  <div class="mt-4 small text-muted">
+    <strong>Tip:</strong> Use the filters to focus your charts and tables before exporting a PDF report. The report reflects your current filter selections.
+  </div>
+</div>
+{% endblock %}

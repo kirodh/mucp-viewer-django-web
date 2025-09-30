@@ -1,0 +1,430 @@
+Ref ID,Species Name,Genus,English Name,Afrikaans Name,Growth Form,WC,NC,KZN,GTG,MPL,FS,EC,LMP,NW,Initial Reduction,Follow-up Reduction,Treatment Frequency,Densification,Flow Optimal,Flow Sub Optimal,Flow Young,Flow Seedling,Flow Coppice
+1,Acacia ataxacantha,Acacia,Flame thorn,vlamdoring,Creeper,0,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.50,0.25,0.25,0.10,0.00
+2,Acacia baileyana,Acacia,Baileys Wattle,bailey-se-wattel,Sprouting tree,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.86,0.86,0.50,0.10,0.25
+3,Acacia borleae,Acacia,Sticky thorn,kleefdoring,Sprouting tree,0,0,0,1,0,0,1,0,0,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+4,Acacia caffra,Acacia,Common hook thorn,gewone haakdoring,Sprouting tree,0,0,0,0,1,1,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+5,Acacia cyclops,Acacia,Red eye,rooikrans,Sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.25
+6,Acacia dealbata,Acacia,Silver Wattle,silwerwattel,Sprouting tree,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.90,0.90,0.50,0.10,0.50
+7,Acacia decurrens,Acacia,Green Wattle,groenwattel,Sprouting tree,0,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.90,0.90,0.50,0.10,0.50
+8,Acacia elata,Acacia,Peppertree Wattle,peperboomwattel,Sprouting tree,1,1,1,1,1,0,1,0,1,50.00,20.00,12,15,0.86,0.86,0.50,0.10,0.50
+9,Acacia erubescens,Acacia,Blue thorn,Blouhaak,Sprouting tree,1,1,1,0,1,0,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+10,Acacia exuvialis,Acacia,Flaky thorn,skilferdoring,Sprouting tree,0,0,0,0,0,1,1,0,0,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+11,Acacia fleckii,Acacia,Plate thorn,bladdoring,Sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+12,Acacia gerrardii,Acacia,Red thorn,rooidoring,Sprouting tree,0,0,0,1,0,1,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+13,Acacia grandicornuta,Acacia,Horned thorn,horingdoring,Sprouting tree,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+14,Acacia hebeclada,Acacia,Candle acacia,Trassiedoring,Sprouting tree,1,1,1,0,1,1,1,1,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+15,Acacia implexa,Acacia,Screw - pod wattle,,Sprouting tree,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.25
+16,Acacia karroo,Acacia,Sweet thorn,soetdoring,Sprouting tree,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+17,Acacia longifolia,Acacia,Long-leaved Wattle,langblaarwattel,Sprouting tree,1,1,1,1,1,1,1,0,0,50.00,20.00,12,15,0.90,0.90,0.50,0.10,0.50
+18,Acacia luederitzii var. lueder,Acacia,False umbrella thorn,baster haak-en-steek,Sprouting tree,0,1,0,0,0,0,0,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+19,Acacia luederitzii var. retine,Acacia,Belly thorn,buikdoring,Sprouting tree,0,1,0,1,0,1,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+20,Acacia mearnsii,Acacia,Black Wattle,swartwattel,Sprouting tree,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.90,0.90,0.50,0.10,0.50
+21,Acacia melanoxylon,Acacia,Blackwood,swarthout,Sprouting tree,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.90,0.90,0.50,0.10,0.50
+22,Acacia mellifera,Acacia,Black thorn,swarthaak,Sprouting tree,1,1,1,0,1,1,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+23,Acacia nigrescens,Acacia,Knob-thorn,knoppiesdoring,Sprouting tree,0,0,0,0,0,1,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+24,Acacia nilotica,Acacia,Scented thorn,lekkerruikpeul,Sprouting tree,0,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+25,Acacia paradoxa,Acacia,Kangaroo wattle,,Sprouting tree,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.50,0.10,0.50
+26,Acacia permixta,Acacia,Slender thorn,slapdoring,Sprouting tree,0,0,0,0,0,1,0,0,0,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+27,Acacia podalyriifolia,Acacia,Pearl Acacia,vaalmimosa,Sprouting tree,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.86,0.86,0.50,0.10,0.50
+28,Acacia pycnantha,Acacia,Golden Wattle,gouewattel,Sprouting tree,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.50,0.10,0.50
+29,Acacia saligna,Acacia,Port Jackson Willow,goudwilger,Sprouting tree,1,1,1,1,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.50,0.10,0.50
+30,Acacia senegal,Acacia,Three-hook thorn,driehaakdoring,Sprouting tree,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+31,Acacia sieberana,Acacia,Paperbark thorn,Papierdoring,Sprouting tree,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+32,Acacia stricta,Acacia,Hop wattle,,Sprouting tree,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.50,0.10,0.25
+33,Acacia tenuispina,Acacia,Turf thorn,fyndoring,Sprouting tree,0,0,0,0,1,1,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+34,Acacia tortilis,Acacia,Umbrella thorn,Haak-en-steek,Sprouting tree,1,1,1,1,1,0,1,0,1,50.00,20.00,12,15,0.50,0.00,0.25,0.10,0.25
+35,Acer buergerianum,Acer,Chinese maple,Chinese ahorn,Non sprouting tree,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+36,Acer negundo,Acer,Ash-leaved maple,Essenblaarhorn,Non sprouting tree,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+37,Achyranthes aspera,Achyranthes,Burweed,grootklits,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+38,Agave americana,Agave,American Agave,garingboom,Cactus,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+39,Agave sisalana,Agave,Sisal,sisal,Cactus,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+40,Ageratina adenophora,Ageratina,Crofton Weed,,Herbaceous,1,0,0,1,1,1,0,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+41,Ageratina riparia,Ageratina,Mistflower,,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+42,Ageratum conyzoides,Ageratum,Blue weed, Billygoat weed,Herbaceous,0,0,0,0,1,1,0,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+43,Ageratum houstonianum,Ageratum,Mexican ageratum,Mexikaanse ageratum,Herbaceous,0,0,1,1,0,1,1,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+44,Agrimonia procera,Agrimonia,Scented agrimony,geelklits,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+418,Agropyron repens,Agropyron,Couch grass,,Grass,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+417,Agrostis gigantea,Agrostis,Red top,,Grass,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+45,Ailanthus altissima,Ailanthus,Tree of Heaven,hemelboom,Sprouting tree,1,0,1,1,1,0,1,1,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+46,Albizia lebbeck,Albizia,Lebbeck tree,lebbeckboom,Non sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+47,Albizia procera,Albizia,False lebbeck,basterlebbeck,Non sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+48,Alhagi maurorum,Alhagi,Camel thorn bush,kameeldoringbos,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+49,Alisma plantato,Alisma,Mud plantain,padda lepel,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+50,Alnus glutinosa,Alnus,Black alder,swartels,Non sprouting tree,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.00
+421,Alopecurus geniculatus,Alopecurus,Marsh foxtail,,Grass,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+51,Alpinia zerumbet,Alpinia,Shell ginger,skulpgemmer,Herbaceous,0,0,1,1,0,1,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+52,Ammophila arenaria,Ammophila,Marram grass,,Grass,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+53,Anredera cordifolia,Anredera,Maderia Vine,Madiera ranker,Creeper,1,0,1,1,0,0,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+54,Antigonon leptopus,Antigonon,Coral Creeper,koraalklimop,Creeper,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+55,Araujia sericifera,Araujia,Moth catcher,motvanger,Creeper,1,0,1,1,1,0,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+56,Ardisia crenata,Ardisia,Coralberry tree, Coral bush,Herbaceous,0,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+57,Ardisia elliptica,Ardisia,Shoebutton ardisia,,Herbaceous,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+58,Argemone mexicana,Argemone,Yellow-flowered Mexican Poppy,geelblom bloudissel,Herbaceous,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+59,Argemone ochroleuca,Argemone,White-flowered Mexican Poppy,witblom bloudissel,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+60,Aristolochia elegans,Aristolochia,Dutchmans pipe,sisblom,Creeper,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+61,Arundo donax,Arundo,Giant Spanish Reed,spaanseriet,Grass,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,1.00,1.00,0.25,0.10,0.00
+63,Asclepias fruticosa,Asclepias,Shrubby milkwood,melkbos,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+64,Atriplex inflata,Atriplex,Sponge-fruit Saltbush,blasiesoutbos,Herbaceous,1,1,1,0,0,0,0,1,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+65,Atriplex lindleyi subsp. Infla,Atriplex,Sponge - fruit saltbush,blasiesoutbos,Herbaceous,1,1,1,0,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+66,Atriplex nummularia,Atriplex,Old Man Saltbush,oumansoutbos,Herbaceous,1,1,1,0,1,1,0,1,1,50.00,20.00,12,15,0.57,0.57,0.25,0.10,0.00
+67,Avena fatua,Avena,Common wild oats,wilde klawer,Grass,1,1,1,0,0,0,0,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+68,Azima tetracantha,Azima,Needle bush,speldedoring,Herbaceous,0,0,1,1,0,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+69,Azolla filiculoides,Azolla,Red Water Fern,rooiwatervaring,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+70,Azolla pinnata,Azolla,Mosquitos fern,,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+71,Bartlettina sordida,Bartlettina,Bartlettina,,Herbaceous,1,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+72,Bauhinia purpurea,Bauhinia,Butterfly orchid tree,skoenlapper orgideeboom,Non sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+73,Bauhinia variegata,Bauhinia,Orchid Tree,ordiegeeboom,Non sprouting tree,1,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+74,Berberis thunbergii,Berberis,Japanese barberry,japanse berberis,Herbaceous,1,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+75,Billardiera heterophylla,Billardiera,Bluebell creeper,,Creeper,1,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+76,Briza maxima,Briza,Quacking grass,,Grass,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+77,Bryophyllum delagoense,Bryophyllum,Chandelier plant,kandelaarplant,Cactus,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+78,Bryophyllum pinnatum,Bryophyllum,Cathedral bells,,Cactus,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+79,Bryophyllum proliferum,Bryophyllum,Green mother of millions,,Cactus,0,0,0,0,0,1,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+80,Buddleja davidii,Buddleja,Chinese sagewood,Chinese saliehout,Herbaceous,1,0,0,0,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+81,Buddleja madagascariensis,Buddleja,Madagascar sagewood,Madagaskarsaliehout,Herbaceous,1,0,0,0,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+82,Cabomba caroliniana,Cabomba,Cabomba,,Aquatic weed,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+83,Caesalpinia decapetala,Caesalpinia,Mauritius Thorn,Kraaldoring,Creeper,0,0,1,1,0,1,1,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+84,Caesalpinia gilliesii,Caesalpinia,Bird-of-paradise flower,Paradysvoelblom,Herbaceous,0,1,1,0,0,1,0,1,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+85,Callisia repens,Callisia,Creeping inch plant,,Herbaceous,0,0,0,1,0,1,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+86,Callistemon citrinus,Callistemon,Lemon Bottlebrush,Lemoenperdestert,Sprouting tree,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.50,0.50,0.50,0.10,0.50
+87,Callistemon rigidus,Callistemon,Stiff-leaved bottlebrush,Perdestert,Sprouting tree,1,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.50,0.10,0.50
+88,Callistemon viminalis,Callistemon,Weeoing bottlebrush,Treurperdestert,Sprouting tree,1,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.50,0.10,0.50
+89,Calotropis procera,Calotropis,Giant milkweed,,Herbaceous,1,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+90,Campuloclinium macrocephalum,Campuloclinium,Pom pom weed,pom-pom onkruid,Herbaceous,0,0,0,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+91,Canna indica,Canna,Indian shot,Indiese kanna,Herbaceous,1,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+92,Cardiospermum grandiflorum,Cardiospermum,Balloon Vine,blaasklimop,Creeper,0,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+93,Cardiospermum halicacabum,Cardiospermum,Balloon Vine spp,,Creeper,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+94,Casuarina cunninghamiana,Casuarina,Beefwood,kasuarisboom,Sprouting tree,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.90,0.90,0.25,0.10,0.25
+95,Casuarina equisetifolia,Casuarina,Horsetail tree,perdestertboom,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.90,0.90,0.25,0.10,0.25
+96,Catharanthus roseus,Catharanthus,Madagascar periwinkle,begraafplaasblom,Herbaceous,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.20,0.10,0.25,0.10,0.00
+97,Celtis australis,Celtis,Nettle tree,netelboom,Sprouting tree,0,0,0,0,0,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+98,Celtis occidentalis,Celtis,Common hackberry,vals wirstinkhout,Sprouting tree,1,0,1,1,1,0,1,1,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+99,Centranthus ruber,Centranthus,Red Valerian,,Herbaceous,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+100,Ceratophyllum demersum,Ceratophyllum,Water hornwort,,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+101,Cereus jamacaru (C. peruvianus,Cereus,Queen-of-the-Night,nagblom,Cactus,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+102,Cestrum aurantiacum,Cestrum,Yellow or Orange cestrum,,Creeper,1,0,0,1,1,0,1,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+103,Cestrum laevigatum,Cestrum,Ink berry,inkbessie,Herbaceous,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+104,Cestrum parqui,Cestrum,Chilean cestrum,,Creeper,0,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+105,Chondrilla juncea,Chondrilla,Skeleton weed,,Herbaceous,1,0,1,1,0,0,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+106,Chromolaena odorata,Chromolaena,Paraffin/Triffid Weed,Paraffienbos,Herbaceous,0,0,1,1,0,1,1,0,0,50.00,20.00,12,15,0.90,0.90,0.25,0.10,0.00
+424,Cinnamomum camphoratus,Cinnamomum,Cinnamomum,,Non sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.72,0.50,0.25,0.10,0.25
+107,Cirsium japonicum,Cirsium,Japanese thistle,,Herbaceous,1,1,1,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+108,Cirsium vulgare,Cirsium,Scotch thistle, Spear thistle,Non sprouting tree,0,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+109,Colophospermum mopane,Colophospermum,Mopane,mopanie,Sprouting tree,0,0,0,0,0,1,1,0,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+110,Combretum apiculatum,Combretum,Red bush willow,Rooibos,Sprouting tree,0,0,0,0,1,1,1,0,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+111,Commiphora pyracanthoides,Commiphora,Cork tree,Gewone kannidood,Cactus,0,1,0,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+112,Convolvulus arvensis,Convolvulus,Field bindweed, Wild morning glory,Creeper,0,1,1,1,1,1,0,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+113,Coreopsis lanceolata,Coreopsis,Tickseed,,Herbaceous,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+114,Cortaderia jubata,Cortaderia,Pampas grass,,Grass,1,0,0,0,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+115,Cortaderia selloana,Cortaderia,Pampas grass,silwerpampasgras,Grass,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+116,Cotoneaster franchetii,Cotoneaster,Orange Cotoneaster,oranje cotoneaster,Herbaceous,1,0,1,1,0,0,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+117,Cotoneaster glaucophyllus,Cotoneaster,Late cotoneaster,Bloudergmispel,Herbaceous,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+118,Cotoneaster pannosus,Cotoneaster,Silver - leaf cotoneaster,,Herbaceous,0,0,1,1,1,0,0,1,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+119,Cotoneaster salicifolius,Cotoneaster,Willow-leaved showberry,,Herbaceous,0,0,0,1,0,0,0,1,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+120,Cotoneaster simonsii,Cotoneaster,Himalayan cotoneaster,,Herbaceous,0,0,0,1,0,0,0,1,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+121,Crotolaria agatiflora,Crotolaria,Canarybird bush,Voeltjiebos,Herbaceous,1,0,0,1,1,0,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+122,Cryptostegia grandiflora,Cryptostegia,Rubber vine,Rubberklimop,Creeper,0,0,0,0,0,1,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+123,Crytostegia madagascariensis,Crytostegia,Madagascar rubber vine,,Creeper,0,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+124,Cuscuta campestris,Cuscuta,Common dodder,,Creeper,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+125,Cuscuta suaveolens,Cuscuta,Lucerne dodder,,Creeper,0,0,1,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+273,Cylindropuntia fulgida,Cylindropuntia,Rosea Cactus,roseakaktus,Cactus,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+128,Cylindropuntia tunicata,Cylindropuntia,Chain-link cactus,,Cactus,0,1,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+126,Cytisus monspessulanus,Cytisus,Montpellier broom,,Herbaceous,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+127,Cytisus scoparius,Cytisus,Scotch broom,Skotse brem,Herbaceous,0,0,1,1,0,0,0,1,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+129,Datura ferox,Datura,Large Thorn Apple,grootstinkblaar,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+130,Datura innoxa,Datura,Downy Thorn Apple,harige stinkblaar,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+131,Datura stramonium,Datura,Common Thorn Apple,gewone stinkblaar,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+132,Dichrostachys cinerea,Dichrostachys,Sickle bush,Sekelbos,Herbaceous,1,1,1,0,0,1,1,1,1,50.00,20.00,12,15,0.25,0.00,0.25,0.10,0.25
+133,Diospyros lycioides,Diospyros,Blue bush,bloubos,Herbaceous,0,0,0,1,0,1,1,0,1,50.00,20.00,12,15,0.25,0.00,0.25,0.10,0.25
+134,Diplocyclos palmatus,Diplocyclos,Lollipop climber,,Creeper,1,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+135,Dodonaea angustifolia,Dodonaea,Sand olive,sandolien,Herbaceous,0,0,0,0,0,1,0,0,1,50.00,20.00,12,15,0.25,0.00,0.25,0.10,0.25
+136,Duchesnea indica,Duchesnea,Wild strawberry,wilde-aarbei,Creeper,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+137,Duranta erecta,Duranta,Forget-me-not tree,Vergeet-my-nie boom,Herbaceous,0,0,0,1,0,1,1,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+138,Echinodorus cordifolius,Echinodorus,Creeping burhead,,Creeper,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+139,Echinodorus tenellus,Echinodorus,Amazon sword plant,,Herbaceous,1,0,1,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+140,Echinopsis spachiana,Echinopsis,Torch Cactus,orrelkaktus,Cactus,1,1,1,0,1,1,0,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+141,Echium candidans,Echium,Pride of Madeira,,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+142,Echium plantagineum,Echium,Patterson's curse,persechium,Herbaceous,1,1,1,1,1,0,1,1,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+143,Echium vulgare,Echium,Blue echium,blouechium,Herbaceous,1,1,0,1,0,0,1,1,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+144,Egeria densa,Egeria,Dense Water weed,,Aquatic weed,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+145,Eichhornia crassipes,Eichhornia,Water Hyacinth,waterhiasint,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+146,Elodea canadensis,Elodea,Canadian waterweed,,Aquatic weed,1,0,0,1,1,0,1,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+147,Elytropappus rhinoceratus,Elytropappus,Slangbos,Slangbos,Herbaceous,0,1,0,0,1,0,0,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+148,Equisetum hyemale,Equisetum,Rough horsetail,,Sprouting tree,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+149,Eriobotrya japonica,Eriobotrya,Loquat,lukwart,Sprouting tree,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+150,Eucalyptus camaldulensis,Eucalyptus,River red gum,rooibloekom,Sprouting tree,1,1,1,0,1,1,1,1,1,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+151,Eucalyptus cladocalyx,Eucalyptus,Sugar Gum,suikerbloekom,Sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+152,Eucalyptus conferruminata,Eucalyptus,Bald island Marlock,,Sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+153,Eucalyptus diversicolor,Eucalyptus,Karri,karrie,Sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+416,Eucalyptus globulus,Eucalyptus,Eucalyptus,,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+154,Eucalyptus grandis,Eucalyptus,Saligna Gum,salignabloekom,Sprouting tree,0,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+155,Eucalyptus lehmanii,Eucalyptus,Spider Gum,spinnekopbloekom,Sprouting tree,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+156,Eucalyptus macarthurii,Eucalyptus,Woollybutt gum,wolstambloekom,Sprouting tree,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+157,Eucalyptus maculata,Eucalyptus,Spotted Gum,,Sprouting tree,1,0,0,0,0,0,1,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+158,Eucalyptus paniculata,Eucalyptus,Grey Ironbark,,Sprouting tree,0,0,0,0,0,0,1,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+159,Eucalyptus sideroxylon,Eucalyptus,Black Ironbark,swartyster basbloekom,Sprouting tree,0,0,0,0,1,1,0,1,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+160,Eucalyptus smithii,Eucalyptus,Blackbutt perpermint,swartstampeperment,Sprouting tree,1,0,0,0,0,0,1,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+161,Eucalyptus tereticornis,Eucalyptus,Forest red gum,Bosrooibloekom,Sprouting tree,0,0,0,1,0,0,1,0,0,50.00,20.00,12,15,0.90,0.72,0.50,0.10,0.50
+162,Euclea crispa,Euclea,Blue gwarri,bloughwarrie,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.25
+163,Euclea divinorum,Euclea,Magic gwarri,towerghwarrie,Herbaceous,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.25
+164,Euclea undulata,Euclea,Common gwarri,gewone ghwarrie,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.25
+165,Eugenia uniflora,Eugenia,Pitanga, Surinam cherry,Herbaceous,0,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+166,Euphorbia esula,Euphorbia,Leafy spurge,,Cactus,1,1,1,0,0,1,0,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+167,Euphorbia leococephala,Euphorbia,White poinsettia,,Cactus,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+168,Fallopia sachalinensis,Fallopia,Giant knotweed,,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+420,Festuca rubra,Festuca,Red fescue,,Grass,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+169,Flaveria bidentis,Flaveria,Smelters Bush,smeltersbossie,Herbaceous,0,0,1,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+170,Foeniculum vulgare,Foeniculum,Fennel,Vinkel,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+171,Fraxinus americana,Fraxinus,American ash,Amerikaanse esselboom,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.25
+172,Fraxinus angustifolia,Fraxinus,Algerian ash,Algeriese esselboom,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.25
+173,Furcraea foetida,Furcraea,Mauritius hemp,,Cactus,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+174,Furcraea gigantea,Furcraea,Mauritius hemp,,Cactus,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+175,Galium tricornutum,Galium,Three-horned bedstraw,,Herbaceous,1,1,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+176,Gaura coccinea,Gaura,Scarlet gaura,,Herbaceous,1,1,0,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+177,Genista monspessulanus,Genista,Montpellier broom,Montpellierbrem,Herbaceous,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+178,Gleditsia triacanthos,Gleditsia,Honey Locust,soutpeulboom,Sprouting tree,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.50
+179,Glyceria maxima,Glyceria,Reed meadow grass,,Aquatic weed,0,1,1,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+180,Grevillea banksii,Grevillea,Australian crimson oak,Australiese rooi-elk,Non sprouting tree,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+181,Grevillea robusta,Grevillea,Silkey Oak,silwereik,Non sprouting tree,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.00
+182,Grevillea rosmarinifolia,Grevillea,Rosemary grevillea,,Non sprouting tree,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+183,Grewia bicolor,Grewia,Bastard raisin bush,basterrosyntjie,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+185,Grewia flavescens,Grewia,Rough leaved raisin,skurwerosyntjie,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+184,Grewia flawa,Grewia,Wild raisin,wilderosyntjie,Herbaceous,0,0,0,1,1,1,1,0,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+186,Grewia monticola,Grewia,Silver raisin,vaalrosyntjie,Herbaceous,0,0,0,0,0,1,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+187,Hakea drupacea,Hakea,Sweet Hakea,soethakea,Non sprouting tree,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.78,0.78,0.25,0.10,0.00
+188,Hakea gibbosa,Hakea,Rock Hakea,harige hakea,Non sprouting tree,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.78,0.78,0.25,0.10,0.00
+189,Hakea sericea,Hakea,Silkey Hakea,syerige hakea,Non sprouting tree,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.78,0.78,0.25,0.10,0.00
+190,Harrisia martinii,Harrisia,Moon cactus, Harrisia cactus,Cactus,0,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+191,Hedera helix subsp. canariensi,Hedera,Canary ivy,Madieraklimop,Creeper,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+192,Hedera helix subsp. Helix,Hedera,English ivy,Engelse hedera,Creeper,1,0,1,1,1,0,0,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+193,Hedychium coccineum,Hedychium,Red ginger lily,rooigemmerlelie,Herbaceous,1,0,0,1,0,0,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+194,Hedychium coronarium,Hedychium,White ginger lily,witgemmerlelie,Herbaceous,1,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+195,Hedychium flavescens,Hedychium,Yellow ginger lily,geelgemmerlelie,Herbaceous,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+196,Hedychium gardnerianum,Hedychium,Kahili ginger lily,kahiligemmerlelie,Herbaceous,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+197,Hedychium spp,Hedychium,Ginger lily,gemmerlelies,Herbaceous,1,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+423,Holcus lanatus,Holcus,Velvet grass,,Grass,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+198,Homolanthus populifolius,Homolanthus,Bleeding-heart Tree,,Non sprouting tree,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+199,Houttuynia cordata,Houttuynia,Chameleon plant,,Herbaceous,1,0,0,1,0,0,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+200,Hydrilla verticillata,Hydrilla,Hydrilla,,Aquatic weed,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+201,Hydrocleys nymphoides,Hydrocleys,Water poppy,,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+202,Hylocereus undatus,Hylocereus,Night-blooming cereus,,Cactus,1,1,1,0,0,1,0,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+203,Hypericum androsaemum,Hypericum,Tutsan,,Herbaceous,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+204,Hypericum perforatum,Hypericum,St Johns Wort,Johanneskruid,Herbaceous,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+205,Ipomoea alba,Ipomoea,Moonflower,maanblom,Creeper,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+206,Ipomoea carnea,Ipomoea,Morning glory bush,,Aquatic weed,0,0,1,1,1,1,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+207,Ipomoea indica,Ipomoea,Blue morning glory,purperwinde,Herbaceous,1,0,1,1,1,0,1,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+208,Ipomoea purpurea,Ipomoea,Morning glory (common),purperwind,Creeper,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+209,Iris pseudacorus,Iris,Yellow flag,geel iris,Aquatic weed,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+210,Jacaranda mimosifolia,Jacaranda,Jacaranda,jakaranda,Sprouting tree,0,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.25
+211,Jatropha curcas,Jatropha,Physic Nut,purgeerboontjie,Herbaceous,0,0,0,1,0,1,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+212,Jatropha gossypifolia,Jatropha,Bellyache bush,,Herbaceous,0,0,0,1,0,1,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+213,Juniperus virginiana,Juniperus,Red cedar,rooiseder,Non sprouting tree,0,0,1,0,1,1,0,1,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+214,Kunzea ericoides,Kunzea,White teatree,,Herbaceous,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+215,Lantana camara,Lantana,Lantana,lantana,Herbaceous,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.90,0.90,0.25,0.10,0.00
+216,Lepidium draba,Lepidium,Pepper - cress, Hoary cardaria,Non sprouting tree,0,0,1,1,0,0,0,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+217,Leptospermum laevigatum,Leptospermum,Australian Myrtle,australiese mirt,Herbaceous,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+218,Leucaena leucocephala,Leucaena,Leucaena,reuse wattel,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+219,Leucosidea sericea,Leucosidea,Oldwood,ouhout,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+220,Ligustrum japonicum,Ligustrum,Japanese wax-leaved Privet,japanse ligusters,Sprouting tree,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+221,Ligustrum lucidum,Ligustrum,Chinese wax-leaved Privet,chinese ligusters,Sprouting tree,0,0,0,1,1,1,1,1,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+222,Ligustrum ovalifolium,Ligustrum,Californian Privet,kaliforniese ligusters,Sprouting tree,0,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+223,Ligustrum sinense,Ligustrum,Chinese privet,chinese ligusters,Herbaceous,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+224,Ligustrum spp,Ligustrum,Privets,ligusters,Herbaceous,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+225,Ligustrum vulgare,Ligustrum,Common privet,gewone ligusters,Herbaceous,0,0,0,0,1,0,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+226,Lilium formosanum,Lilium,St Joseph's lily, Trumpet lily,Non sprouting tree,0,0,0,1,1,1,1,1,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+227,Limonium sinuatum,Limonium,Statice,papierblom,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+228,Linaria dalmatica,Linaria,Dalmatian toadflax,,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+229,Linaria vulgaris,Linaria,Common toadflax,,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+230,Litsea glutinosa,Litsea,Indian Laurel,Indiese lourier,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+232,Lonicera japonica,Lonicera,Japanese honeysuckle,Japanse kanferfoelie,Herbaceous,0,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+231,Lopholaena coriifolia,Lopholaena,Lopholaena,pluisbossie,Herbaceous,0,0,0,0,1,1,1,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+233,Ludwigia peruviana,Ludwigia,Water primrose,,Aquatic weed,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+416,Luzula multiflora,Luzula,Heath wood rush,,Herbaceous,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+234,Lythrum hyssopifolia,Lythrum,Hyssop lossestrife,,Aquatic weed,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+235,Lythrum salicaria,Lythrum,Purple loosestrife,,Herbaceous,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+236,Macfadyena unguis-cati,Macfadyena,Cats Claw Creeper,katteklouranker,Creeper,0,0,0,1,1,1,1,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+237,Malva dendromorpha,Malva,Tree mallow,mak kiesieblaar,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+239,Malvastrum coromandelianum,Malvastrum,Prickly malvastrum,,Cactus,0,1,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+238,Malva verticillata,Malva,Mallow,kiesieblaar,Herbaceous,1,1,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+240,Maytenus polyacantha,Maytenus,Kraal spike thorn,kraaldoring,Sprouting tree,0,0,0,0,0,1,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+241,Maytenus senegalensis,Maytenus,Red spike thorn,Rooipendoring,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+242,Melaleuca decussata,Melaleuca,Honey Myrtle,,Sprouting tree,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+243,Melaleuca ericifolia,Melaleuca,Swamp Paper Bark,,Sprouting tree,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+244,Melaleuca hypericifolia,Melaleuca,Red-flowering tea tree,,Sprouting tree,1,1,1,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+245,Melaleuca quinquenervia,Melaleuca,Broad-leaved Paper Bark,,Sprouting tree,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.72,0.72,0.25,0.10,0.25
+246,Melia azederach,Melia,Syringa,sering (mak),Sprouting tree,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+247,Metrosideros excelsus,Metrosideros,New Zealand Bottlebrush,nieu-seelandse perdestert,Non sprouting tree,1,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+248,Mimosa pigra,Mimosa,Sensitive Plant,raak-my-nie,Herbaceous,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+249,Mirabilis jalapa,Mirabilis,Four-o-clock,Vieruurtijie,Herbaceous,0,1,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+250,Montanoa hibiscifolia,Montanoa,Tree Daisy,montanoa,Herbaceous,0,0,1,1,0,0,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+251,Morus alba,Morus,White Mulberry,wit moerbei,Herbaceous,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.72,0.72,0.25,0.10,0.25
+252,Murraya paniculata,Murraya,Orange jasmine,oranjejasmyn,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+253,Myoporum insulata,Myoporum,Manatoka,manatoka,Sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+254,Myoporum laetum,Myoporum,New Zealand manatoka,Nieu-Seelandse manatoka,Sprouting tree,1,1,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+255,Myoporum tenuifolium,Myoporum,Manatoka,manatoka,Sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+256,Myriophyllum aquaticum,Myriophyllum,Parrots Feather,waterduisendblaar,Aquatic weed,1,1,1,1,1,0,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+257,Myriophyllum spicatum,Myriophyllum,Spiked water-milfoil,,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+258,Nassella tenuissima,Nassella,White tussock,witpolgras,Grass,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+259,Nassella trichotoma,Nassella,Nassella tussock,nasella-polgras,Grass,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+260,Nasturium officinale,Nasturium,Watercress,bronkors,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+261,Nephrolepis cordifolia,Nephrolepis,Erect sword fern,,Herbaceous,1,0,1,1,0,1,1,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.25
+262,Nephrolepis exaltata,Nephrolepis,Sword Fern,swaardvaring,Herbaceous,1,0,1,1,0,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+263,Nerium oleander,Nerium,Oleander,selonsroos,Herbaceous,1,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.25
+264,Nicandra physaloides,Nicandra,Apple-of-Peru,basterappelliefie,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+265,Nicotiana tabacum,Nicotiana,Tobacco,tabak,Herbaceous,0,0,0,0,1,1,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+266,Nicotiniana glauca,Nicotiniana,Wild Tobacco,jantwak/ wildetabak,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+267,Nymphea mexicana,Nymphea,Yellow waterlilies,geel waterlelies,Aquatic weed,0,0,0,0,1,0,0,1,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+268,Nymphoides peltata,Nymphoides,Yellow floating heart,,Aquatic weed,0,0,0,0,1,0,0,1,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+269,Opuntia aurantiaca,Opuntia,Jointed cactus,leitjieskaktus,Cactus,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+270,Opuntia engelmannii,Opuntia,Small round - leaved prickly pear,kleinrondeblaarturksvy,Cactus,1,1,1,0,1,1,0,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+271,Opuntia exaltata,Opuntia,Long spine cactus,langdoring kaktus,Cactus,0,1,1,0,0,1,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+272,Opuntia ficus-indica,Opuntia,Sweet Prickly Pear,boereturksvy,Cactus,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+274,Opuntia humifusa,Opuntia,Large flowered prickly pear,,Cactus,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+275,Opuntia imbricata,Opuntia,Imbricate Prickly Pear,kabelturksvy,Cactus,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+276,Opuntia microdasys,Opuntia,Teddybear cactus,,Cactus,1,1,1,0,1,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+277,Opuntia monacantha,Opuntia,Drooping prickly pear,suurturksvy,Cactus,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+278,Opuntia robusta,Opuntia,Blue-leaf cactus,,Cactus,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+279,Opuntia spinulifera,Opuntia,Saucepan cactus, Large round,Creeper,0,1,1,1,0,0,0,1,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+280,Opuntia stricta,Opuntia,Australian Pest Pear,suurturksvy,Cactus,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+281,Orobanche minor,Orobanche,Lesser broomrape, Clover broom,Herbaceous,0,1,1,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+282,Orobanche ramosa,Orobanche,Blue broomrape,Blouduiwel,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+283,Paraserianthes lophantha,Paraserianthes,Stink Bean,stinkboon,Sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.25
+284,Parkinsonia aculeata,Parkinsonia,Jerusalem thorn,Mexikaanse groenhaarboom,Herbaceous,0,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+285,Parthenium hysterophorus,Parthenium,Demonia weed,demonia onkruid,Herbaceous,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+286,Paspalum quadrifarium,Paspalum,Tussock paspalum,paspalum,Grass,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+287,Passiflora caerulea,Passiflora,Blue passion flower,siergrenadella,Creeper,1,0,1,0,1,0,0,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+288,Passiflora edulis,Passiflora,Granadilla,grenadella,Creeper,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+289,Passiflora suberosa,Passiflora,Devil's pumpkin, Indigo berry,Non sprouting tree,0,0,0,0,1,1,0,1,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+290,Passiflora subpeltata,Passiflora,Granadillas,,Creeper,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+291,Passiflora tripartita,Passiflora,Banana poka, Bananadilla,Non sprouting tree,0,1,0,0,0,0,0,1,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+292,Paulownia tomentosa,Paulownia,Empress tree,Keiseringboom,Sprouting tree,0,0,0,0,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+418,Pennisetum clandestinum,Pennisetum,Pennisetum,,Grass,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.20,0.10,0.25,0.10,0.00
+293,Pennisetum purpureum,Pennisetum,Napier grass/Elephant Grass,olifantgras,Grass,1,1,1,1,1,0,1,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+294,Pennisetum setaceum,Pennisetum,Fountain grass,pronkgras,Grass,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+295,Pennisetum villosum,Pennisetum,Feathertop,veergras,Grass,1,1,1,1,1,0,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+296,Pereskia aculeata,Pereskia,Barbados Gooseberry,pereskia,Creeper,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+297,Persicaria capitata,Persicaria,Knotweed,,Aquatic weed,0,0,0,0,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+298,Phytolacca americana,Phytolacca,American pokeweed,Inkbos,Herbaceous,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+299,Phytolacca dioica,Phytolacca,Belhambra,bobbejaandruifboom,Sprouting tree,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+300,Phytolacca heptandra,Phytolacca,Belhambra,bobbejaandruif,Herbaceous,1,0,1,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+419,Phytolacca octandra,Phytolacca,Phytolacca,,Herbaceous,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+301,Pinus canariensis,Pinus,Canary Island Pine,kanariese den,Non sprouting tree,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.25
+302,Pinus elliottii,Pinus,Slash Pine,basden,Non sprouting tree,0,0,1,1,1,1,1,1,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.00
+303,Pinus halepensis,Pinus,Aleppo Pine,aloppoden,Non sprouting tree,1,1,1,1,0,0,0,1,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.00
+304,Pinus patula,Pinus,Patula Pine,treurden,Non sprouting tree,0,0,1,1,1,1,1,1,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.00
+305,Pinus pinaster,Pinus,Cluster Pine,trosden,Non sprouting tree,1,1,1,0,0,0,0,1,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.00
+306,Pinus pinea,Pinus,Umbrella Pine,sambreelden,Non sprouting tree,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.00
+307,Pinus radiata,Pinus,Radiata Pine,radiataden,Non sprouting tree,1,1,1,1,0,0,0,1,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.00
+308,Pinus roxburghii,Pinus,Chir Pine,,Non sprouting tree,0,0,1,0,1,1,0,1,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.00
+309,Pinus taeda,Pinus,Lablolly Pine,,Non sprouting tree,0,0,0,1,0,1,0,0,0,50.00,20.00,12,15,0.87,0.57,0.25,0.10,0.00
+310,Pistia stratiotes,Pistia,Water Lettuce,waterslaai,Aquatic weed,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+311,Pittosporum crassifolium,Pittosporum,Stiff-leaved chessewood,styweblaarkasuur,Sprouting tree,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+312,Pittosporum undulatum,Pittosporum,Sweet Pittosporum,soet pittosporum,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.25
+313,Plectranthus comosus,Plectranthus,Wolly Plectranthus,,Herbaceous,1,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+314,Polypodium aureum,Polypodium,Rabbits foot fern,haaspootvaring,Herbaceous,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+315,Pontederia cordata,Pontederia,Pickerel weed,,Aquatic weed,1,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+316,Populus alba,Populus,White Poplar,witpopulier,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.50
+317,Populus canescens,Populus,Grey Poplar,vaalpopulier,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.50
+318,Populus deltoides,Populus,Match Poplar,vuurhoutjiepopulier,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.50
+319,Prosopis glandulosa,Prosopis,Mesquite,heuningprosopis,Sprouting tree,1,1,1,0,0,0,0,1,1,50.00,20.00,12,15,0.86,0.64,0.25,0.10,0.50
+320,Prosopis velutina,Prosopis,Velvet Mesquite,fluweelprosopis,Sprouting tree,1,1,1,0,0,0,0,1,1,50.00,20.00,12,15,0.86,0.64,0.25,0.10,0.50
+62,Protasparagus laricinus,Protasparagus,Wild asparagus,katbos,Herbaceous,0,0,0,0,0,0,0,1,1,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+321,Prunus serotina,Prunus,Black cherry,Swartkersie,Non sprouting tree,0,0,0,0,1,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+322,Psidium cattleianum,Psidium,Strawberry guava,aarbei koejawel,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+323,Psidium durbanensis,Psidium,Durban guava,Durbanse koejawel,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+324,Psidium guajava,Psidium,Guava,koejawel,Sprouting tree,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+325,Psidium guineense,Psidium,Brazilian guava,Brasiliaanse koejawel,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+326,Pueraria montana,Pueraria,Kudzu Vine,kudzuranker,Creeper,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+327,Pyracantha angustifolia,Pyracantha,Yellow Firethorn,branddoring,Herbaceous,1,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+328,Pyracantha coccinea,Pyracantha,Red firethorn,rooibranddoring,Herbaceous,0,0,0,0,0,0,0,1,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+329,Pyrancantha crenulata,Pyrancantha,Himalayan firethorn,rooivuurdoring,Herbaceous,0,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+330,Pyrancantha koidzumii,Pyrancantha,Formosa firethorn,,Herbaceous,0,0,0,0,0,0,0,1,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+331,Pyrancantha rogersiana,Pyrancantha,Firethorn,,Herbaceous,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+420,Quercus robur,Quercus,Quercus,,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+421,Quercus suber,Quercus,Quercus,,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+332,Rhigozum trichotomum,Rhigozum,Three-thorn rhigozum,driedoring,Herbaceous,0,1,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+333,Rhus glabra,Rhus,Scarlet sumach,gladde sumak,Herbaceous,0,0,0,0,1,1,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+334,Rhus succedanea,Rhus,Wax tree,wasboom,Non sprouting tree,0,0,0,1,1,1,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+335,Ricinus communis,Ricinus,Castor-oil Plant,kasterolieboom,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+336,Rivina humilis,Rivina,Rivina, Bloodberry,sprouting tree,0,0,0,1,1,1,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+337,Robinia pseudoacacia,Robinia,Black Locust,witakasia,Sprouting tree,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.50
+338,Rorippa officinale,Rorippa,Watercress,,Aquatic weed,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+339,Rosa eglanteria,Rosa,Sweet Briar,wilderoos,Herbaceous,0,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+340,Rubus cuneifolius,Rubus,Bramble,braam,Herbaceous,1,0,1,1,0,1,1,0,0,50.00,20.00,12,15,0.72,0.72,0.25,0.10,0.25
+341,Rubus flagellaris,Rubus,Bramble,Braam,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.72,0.72,0.25,0.10,0.25
+342,Rubus fruticosus,Rubus,European blackberry,Braam,Herbaceous,1,0,1,0,1,1,1,1,0,50.00,20.00,12,15,0.72,0.72,0.25,0.10,0.25
+343,Rubus niveus,Rubus,Ceylon raspberry,,Herbaceous,1,0,1,0,1,1,1,1,0,50.00,20.00,12,15,0.72,0.72,0.25,0.10,0.25
+419,Rumex acetosella,Rumex,Common sheep's sorrel,,Herbaceous,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+344,Rumex usambarensis,Rumex,East African dock,Oos-Afrikaanse tongblaar,Herbaceous,1,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+345,sagittaria platyphylla,sagittaria,Arrowhead,,Aquatic weed,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+346,Salix babylonica,Salix,Weeping Willow,treurwilge,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.25
+347,Salix fragilis,Salix,Crack Willow,,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.25
+348,Salix spp,Salix,Willows,,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.87,0.87,0.25,0.10,0.25
+349,Salsola kali,Salsola,Tumbleweed,Rolbossie,Herbaceous,1,1,1,0,1,0,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+350,Salsola tragus,Salsola,Russian tumbleweed,Russiese rolbossie,Herbaceous,1,1,1,0,1,0,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+351,Salvia tiliifolia,Salvia,Lindenleaf sage,,Herbaceous,1,0,1,1,1,0,1,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+352,Salvinia molesta,Salvinia,Kariba Weed,watervaring,Aquatic weed,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+353,Sambucus canadensis,Sambucus,Canadian Elder,Kanadiese vlier,Non sprouting tree,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+354,Sambucus nigra,Sambucus,European elder,Europiese vlier,Non sprouting tree,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+355,Sasa ramosa,Sasa,Dwarf yellow-striped bamboo,dwerggeelstreepbamboes,Herbaceous,0,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+356,Schefflera actinophylla,Schefflera,Australian cabbage tree,Australiese kiepersol,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+357,Schefflera arboricola,Schefflera,Dwarf umbrella tree,hawaiise dwerg,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+358,Schefflera elegantissima,Schefflera,False aralia,Vals-aralia,Sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+360,Schinus molle,Schinus,Pepper tree,peperboom,Sprouting tree,1,0,1,1,0,1,0,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.25
+359,Schinus terebinthifolius,Schinus,Brazilian pepper tree,Brasiliaanse peperboom,Sprouting tree,1,0,1,1,0,1,0,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.25
+361,Senna bicapsularis,Senna,Rambling cassia / Christmas bu,,Creeper,0,0,1,0,0,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+362,Senna didymobotrya,Senna,Peanut butter cassia,grondboontjiebotter kassia,Herbaceous,1,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+363,Senna hirsuta,Senna,Woolly wild sensitive plant,,Herbaceous,0,0,1,1,0,0,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+364,Senna occidentalis,Senna,Stinking weed/ wild coffee,,Herbaceous,0,0,0,1,1,1,1,0,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+365,Senna pendula,Senna,Rambling cassia / Christmas se,,Herbaceous,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+366,Senna septemtrionalis,Senna,Arsenic bush,,Herbaceous,1,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+367,Sesbania punicea,Sesbania,Red Sesbania,rooisesbania,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+368,Solanum betaceum,Solanum,Tree tomatoe,boomtamatie,Herbaceous,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+369,Solanum chrysotrichum,Solanum,Giant devils fig,,Herbaceous,0,0,1,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+370,Solanum elaeagnifolium,Solanum,Silver - leaf nightshade,satansbos,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+371,Solanum mauritianum,Solanum,Bugweed,luisboom,Herbaceous,1,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+372,Solanum pseudocapsicum,Solanum,Jerusalem cherry,Jerusalemkersie,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+373,Solanum seaforthianum,Solanum,Potato Creeper,aartapelranker,Creeper,0,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+374,Solanum sisymbriifolium,Solanum,Wild tomato, Dense - thorned,Non sprouting tree,0,0,0,1,1,1,1,1,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+375,Sorghum halepense,Sorghum,Sorghum,,Grass,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+376,Spartium junceum,Spartium,Spanish broom,spaanse besem,Herbaceous,1,0,1,0,1,0,1,0,0,50.00,20.00,12,15,0.86,0.86,0.25,0.10,0.00
+377,Spathodea campanulata,Spathodea,African flame tree,afrikaanse vlamboom,Non sprouting tree,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+378,Sphagneticola trilobata,Sphagneticola,Singapore daisy,singapoer-madeliefie,Herbaceous,0,0,0,1,1,1,1,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+379,Stachytarpheta spp.,Stachytarpheta,Snakeweeds,,Herbaceous,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+422,Stellaria media,Stellaria,Common chick weed,,Herbaceous,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+380,Stoebe vulgaris,Stoebe,Bancrupt bush,bankrotbos,Herbaceous,0,0,0,0,1,0,0,1,1,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+381,Strychnos madagascariensis,Strychnos,Black monkey orange,swartklapper,Sprouting tree,0,0,0,1,0,1,1,0,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+382,Syncarpa spp.,Syncarpa,Terpentine tree,terpentynboom,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+383,Syngonium spp.,Syngonium,Goose-foot plants,gansvoete,Herbaceous,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+384,Syzygium cumini,Syzygium,Jambolan,,Sprouting tree,0,0,1,1,1,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+385,Syzygium jambos,Syzygium,Rose apple,jamboes,Sprouting tree,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+386,Tamarisk aphylla,Tamarisk,Desert Tamarisk,woestyntamarisk,Sprouting tree,0,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+387,Tamarisk gallica,Tamarisk,French tamarisk,Franse tamarisk,Sprouting tree,0,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+388,Tamarix chinensis,Tamarix,Chinese tamarisk,chinese tamarisk,Sprouting tree,1,1,1,0,0,0,0,1,0,50.00,20.00,12,15,0.90,0.90,0.25,0.10,0.25
+389,Tamarix ramossisima,Tamarix,Pink Tamarisk,pienktamarisk,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+390,Tarchonanthus camphoratus,Tarchonanthus,Camphor bush,Kanferbos,Herbaceous,1,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+391,Tecoma stans,Tecoma,Yellow Bells,geelklokkies,Sprouting tree,0,0,1,1,1,1,1,0,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+395,Telopea speciosissima,Telopea,Waratah,,Herbaceous,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+392,Tephrocactus articulatus,Tephrocactus,Paper spine cholla,,Cactus,0,1,1,0,0,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+393,Terminalia sericea,Terminalia,Silver terminalia,vaalboom (sand),Sprouting tree,1,1,1,1,1,1,1,0,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+394,Thelechitonia trilobata,Thelechitonia,Singapore daisy,Singapoer-madeliefie,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+396,Thevetia peruviana,Thevetia,Yellow Oleander,geel-oleander,Sprouting tree,0,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.25
+397,Tithonia diversifolia,Tithonia,Mexican Sunflower,Mexikaanse sonneblom,Herbaceous,1,0,0,1,0,1,1,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+398,Tithonia rotundifolia,Tithonia,Red Sunflower,rooisonneblom,Herbaceous,0,0,0,1,1,1,1,0,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+399,Toona cilliata,Toona,Toon Tree,toonboom,Sprouting tree,0,0,1,1,0,1,1,0,0,50.00,20.00,12,15,0.00,0.00,0.00,0.00,0.00
+400,Toxicodendron succedaneum,Toxicodendron,Wax tree,wasboom,Non sprouting tree,0,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+401,Tradescantia fluminensis,Tradescantia,Wandering jew,wandelende jood,Creeper,0,1,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+402,Tradescantia zebrina,Tradescantia,Wandering jew,wandelende jood,Creeper,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+403,Triplaris americana,Triplaris,Triplaris,triplaris,Sprouting tree,0,0,0,0,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.25
+404,Tropaeolum speciosum,Tropaeolum,Chilean flame creeper,,Creeper,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+405,Ulex europaeus,Ulex,European gorse,gaspeldoring,Herbaceous,1,0,1,1,0,1,0,0,0,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+406,Ulmus spp,Ulmus,Elm,fynblaarolm,Non sprouting tree,0,0,0,0,1,0,0,1,1,50.00,20.00,12,15,0.50,0.50,0.25,0.10,0.00
+407,Vallisneria spiralis,Vallisneria,Tape weed,,Aquatic weed,1,0,0,0,1,0,0,0,0,50.00,20.00,12,15,0.00,0.00,0.25,0.10,0.00
+408,Verbena bonariensis,Verbena,Wild Verbena,,Herbaceous,0,0,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+409,Verbena brasiliensis,Verbena,Brazilian verbena,,Herbaceous,0,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+410,Vinca major,Vinca,Greater periwinkle,gewone-opklim,Creeper,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+411,Vinca minor,Vinca,Lesser periwinkle,,Creeper,1,0,1,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+412,Vitex trifolia,Vitex,Indian three-leaf vitex,,Herbaceous,1,0,0,1,1,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+413,Wigandia urens,Wigandia,Wigandia,,Herbaceous,1,0,0,1,0,0,0,0,0,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+414,Xanthium spinosum,Xanthium,Spiny Cocklebur,boetebossie,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00
+415,Xanthium strumarium,Xanthium,Cocklebur,kankerroos,Herbaceous,1,1,1,1,1,1,1,1,1,50.00,20.00,12,15,0.10,0.10,0.25,0.10,0.00

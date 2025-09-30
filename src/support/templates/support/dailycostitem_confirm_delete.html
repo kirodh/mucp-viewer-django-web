@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- support daily cost item confirm delete -->
+<!-- Author: Kirodh Boodhraj-->
+<h2>Delete Daily Cost Item</h2>
+<p>Are you sure you want to delete "{{ object }}"?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirm Delete</button>
+    <a href="{% url 'support:dailycost_list' object.costing_model.id %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

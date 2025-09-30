@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- planning list -->
+<!-- Author: Kirodh Boodhraj-->
+<h1>My Planning</h1>
+
+<br>
+<br>
+<p>These are a list of your plans. Please ensure you do the cost plan mapping before you validate. Once validated, you can then run the plan.</p>
+<br>
+<br>
+<a href="{% url 'planning:planning_create' %}" class="btn btn-primary mb-3">New Planning</a>
+<br>
+<br>
+
+{% for message in messages %}
+<div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+{% endfor %}
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Project ID</th>
+        <th>Project</th>
+        <th>Prioritization Model</th>
+        <th>Start Year</th>
+        <th>Budget 1 (Esc %)</th>
+        <th>Budget 2 (Esc %)</th>
+        <th>Budget 3 (Esc %)</th>
+        <th>Budget 4 (Esc %)</th>
+        <th>Categories (Weight)</th>
+        <th>Save Results</th>
+        <th>Created At (UTC)</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for planning in plannings %}
+    <tr>
+        <td>{{ planning.pk }}</td>
+        <td>{{ planning.project }}</td>
+        <td>{{ planning.clearing_norm_model }}</td>
+        <td>{{ planning.start_year }} for {{ planning.years_to_run }} years for {{ planning.standard_working_day }} hour day</td>
+        <td>{{ planning.currency }} {{ planning.budget_plan_1 }} ({{ planning.escalation_plan_1 }}%)</td>
+        <td>{{ planning.currency }} {{ planning.budget_plan_2 }} ({{ planning.escalation_plan_2 }}%)</td>
+        <td>{{ planning.currency }} {{ planning.budget_plan_3 }} ({{ planning.escalation_plan_3 }}%)</td>
+        <td>{{ planning.currency }} {{ planning.budget_plan_4 }} ({{ planning.escalation_plan_4 }}%)</td>
+        <td>
+            <ul>
+                {% for pc in planning.planning_categories.all %}
+                <li>{{ pc.category.name }} ({{ pc.category.weight }})</li>
+                {% empty %}
+                <li>No categories</li>
+                {% endfor %}
+            </ul>
+        </td>
+        <td>{{ planning.save_results|yesno:"Yes,No" }}</td>
+        <td>{{ planning.created_at|date:"Y-m-d H:i" }}</td>
+        <td>
+            <a href="{% url 'planning:define_costing_mapping' planning.pk %}" class="btn btn-sm btn-warning">
+                Define Costing Mapping
+            </a>
+            <a href="{% url 'planning:planning_detail' planning.pk %}" class="btn btn-sm btn-info">
+                Full Details
+            </a>
+            {% if planning.has_complete_costing_mapping %}
+                <a href="{% url 'planning:planning_validation' planning.pk %}" class="btn btn-sm btn-success">
+                    Validate
+                </a>
+            {% else %}
+                <button class="btn btn-sm btn-success" disabled>
+                    Validate
+                </button>
+            {% endif %}
+            <a href="{% url 'planning:planning_delete' planning.pk %}" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="11">No plannings found.</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<!-- Pagination Toggle -->
+<div class="card-footer">
+    <button id="toggle-pagination-btn" class="btn btn-secondary mb-3">
+        Show Pagination
+    </button>
+
+    <nav id="pagination-container" style="display: none;">
+        <ul class="pagination mb-0">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            </li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+            <li class="page-item {% if num == page_obj.number %}active{% endif %}">
+                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+            </li>
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+
+<script>
+    document.getElementById("toggle-pagination-btn").addEventListener("click", function() {
+        const container = document.getElementById("pagination-container");
+        if (container.style.display === "none") {
+            container.style.display = "block";
+            this.textContent = "Hide Pagination";
+        } else {
+            container.style.display = "none";
+            this.textContent = "Show Pagination";
+        }
+    });
+
+</script>
+
+{% endblock %}

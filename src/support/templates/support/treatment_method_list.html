@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- support treatment method list -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container mt-5">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0"><i class="bi bi-tools me-2"></i> Your Treatment Methods</h4>
+            <a href="{% url 'support:treatment_method_create' %}" class="btn btn-light btn-sm fw-bold">
+                <i class="bi bi-plus-circle me-1"></i> Create New
+            </a>
+        </div>
+
+        <div class="card-body">
+            {% if forms %}
+                <ul class="list-group list-group-flush">
+                    {% for form in forms %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="fw-semibold">{{ form.treatment_method }}</span>
+                            <div>
+                                {% if form.user == request.user %}
+                                    <a href="{% url 'support:treatment_method_update' form.pk %}"
+                                       class="btn btn-sm btn-outline-primary me-2">
+                                       <i class="bi bi-pencil-square"></i> Edit
+                                    </a>
+                                    <a href="{% url 'support:treatment_method_delete' form.pk %}"
+                                       class="btn btn-sm btn-outline-danger">
+                                       <i class="bi bi-trash"></i> Delete
+                                    </a>
+                                {% else %}
+                                    <span class="badge bg-secondary">Default</span>
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="alert alert-info text-center mb-0">
+                    <i class="bi bi-info-circle me-2"></i> No treatment methods found.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- support clearing norms list -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container mt-4">
+
+    <h2>Clearing Norms</h2>
+    <br>
+    <br>
+    <br>
+    <!-- Search Form -->
+    <p>You can search for clearing norms here:</p>
+    <form method="get" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="q" value="{{ search_query }}" class="form-control" placeholder="Search norms...">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <!-- APO Default Norm Sets -->
+    <h3>APO Default Norms</h3>
+    {% for norm_set, page_obj in paginated_default_sets %}
+    <div class="card mb-4">
+        <div class="card-header">
+            <strong>{{ norm_set.name }}</strong>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover mb-0">
+                    <thead class="table-light">
+                    <tr>
+                        <th>Density</th>
+                        <th>Process</th>
+                        <th>Growth Form</th>
+                        <th>Size Class</th>
+                        <th>Treatment Method</th>
+                        <th>Terrain</th>
+                        <th>PPD</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for norm in page_obj %}
+                    <tr>
+                        <td>{{ norm.density }}</td>
+                        <td>{{ norm.get_process_display }}</td>
+                        <td>{{ norm.growth_form }}</td>
+                        <td>{{ norm.get_size_class_display }}</td>
+                        <td>{{ norm.treatment_method }}</td>
+                        <td>{{ norm.get_terrain_display }}</td>
+                        <td>{{ norm.ppd }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7" class="text-center">No norms found.</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="card-footer">
+
+            <button id="toggle-pagination-btn" class="btn btn-secondary mb-3">
+                Show Pagination
+            </button>
+
+
+            <nav id="pagination-container" style="display: none;">
+                <ul class="pagination mb-0">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?default_set_{{ norm_set.id }}_page={{ page_obj.previous_page_number }}&q={{ search_query }}">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    <li class="page-item {% if num == page_obj.number %}active{% endif %}">
+                        <a class="page-link" href="?default_set_{{ norm_set.id }}_page={{ num }}&q={{ search_query }}">{{ num }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?default_set_{{ norm_set.id }}_page={{ page_obj.next_page_number }}&q={{ search_query }}">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+
+            <script>
+  const toggleBtn = document.getElementById('toggle-pagination-btn');
+  const pagination = document.getElementById('pagination-container');
+
+  toggleBtn.addEventListener('click', () => {
+    if (pagination.style.display === 'none') {
+      pagination.style.display = 'block';
+      toggleBtn.textContent = 'Hide Pagination';
+    } else {
+      pagination.style.display = 'none';
+      toggleBtn.textContent = 'Show Pagination';
+    }
+  });
+
+            </script>
+
+
+        </div>
+    </div>
+    {% empty %}
+    <p>No default norms available.</p>
+    {% endfor %}
+
+    <!-- User Norm Sets -->
+    <h3>Your Norm Sets</h3>
+    <a href="{% url 'support:clearing_norm_set_create' %}" class="btn btn-success btn-sm mb-3">Create New Norm Set</a>
+
+    {% for norm_set, page_obj in paginated_user_sets %}
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <strong>{{ norm_set.name }}</strong>
+            <div>
+                <a href="{% url 'support:clearing_norm_set_delete' norm_set.pk %}" class="btn btn-danger btn-sm">Delete Set</a>
+                <a href="{% url 'support:clearing_norm_create' %}?set={{ norm_set.id }}" class="btn btn-primary btn-sm">Add Norm</a>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover mb-0">
+                    <thead class="table-light">
+                    <tr>
+                        <th>Density</th>
+                        <th>Process</th>
+                        <th>Growth Form</th>
+                        <th>Size Class</th>
+                        <th>Treatment Method</th>
+                        <th>Terrain</th>
+                        <th>PPD</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for norm in page_obj %}
+                    <tr>
+                        <td>{{ norm.density }}</td>
+                        <td>{{ norm.get_process_display }}</td>
+                        <td>{{ norm.growth_form }}</td>
+                        <td>{{ norm.get_size_class_display }}</td>
+                        <td>{{ norm.treatment_method }}</td>
+                        <td>{{ norm.get_terrain_display }}</td>
+                        <td>{{ norm.ppd }}</td>
+                        <td>
+                            <a href="{% url 'support:clearing_norm_update' norm.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{% url 'support:clearing_norm_delete' norm.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="8" class="text-center">No norms found in this set.</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="card-footer">
+            <button id="toggle-user-pagination-btn-{{ norm_set.id }}" class="btn btn-secondary mb-3">
+        Show Pagination
+    </button>
+            <nav id="pagination-user-container-{{ norm_set.id }}" style="display: none;">
+                <ul class="pagination mb-0">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?user_set_{{ norm_set.id }}_page={{ page_obj.previous_page_number }}&q={{ search_query }}">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    <li class="page-item {% if num == page_obj.number %}active{% endif %}">
+                        <a class="page-link" href="?user_set_{{ norm_set.id }}_page={{ num }}&q={{ search_query }}">{{ num }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="?user_set_{{ norm_set.id }}_page={{ page_obj.next_page_number }}&q={{ search_query }}">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("toggle-user-pagination-btn-{{ norm_set.id }}");
+    const pagination = document.getElementById("pagination-user-container-{{ norm_set.id }}");
+
+    toggleBtn.addEventListener("click", () => {
+      if (pagination.style.display === "none") {
+        pagination.style.display = "block";
+        toggleBtn.textContent = "Hide Pagination";
+      } else {
+        pagination.style.display = "none";
+        toggleBtn.textContent = "Show Pagination";
+      }
+    });
+  });
+</script>
+
+        </div>
+    </div>
+    {% empty %}
+    <p>You have not created any norm sets yet.</p>
+    {% endfor %}
+
+</div>
+{% endblock %}

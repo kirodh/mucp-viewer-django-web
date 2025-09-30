@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Project{% endblock %}
+
+{% block content %}
+<!-- project form -->
+<!-- Author: Kirodh Boodhraj-->
+
+<div class="container mt-5" style="max-width: 700px;">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Create Project</h4>
+        </div>
+        <div class="card-body">
+
+            <!-- Project Form -->
+
+            <form method="post" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+
+                <div class="mb-3">
+                    <label for="{{ form.name.id_for_label }}" class="form-label">Project Name</label>
+                    {{ form.name.errors }}
+                    {{ form.name }}
+                </div>
+
+                <!-- Compartments -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        Compartments Shapefiles
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">Upload all required shapefile components (.shp, .shx, .prj,
+                            .dbf).</p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Shapefile (.shp)</label>
+                                {{ form.compartment_shp.errors }}
+                                {{ form.compartment_shp }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Index (.shx)</label>
+                                {{ form.compartment_shx.errors }}
+                                {{ form.compartment_shx }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Projection (.prj)</label>
+                                {{ form.compartment_prj.errors }}
+                                {{ form.compartment_prj }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Database (.dbf)</label>
+                                {{ form.compartment_dbf.errors }}
+                                {{ form.compartment_dbf }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GIS Mapping -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        GIS Mapping Shapefiles
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">Upload all required shapefile components (.shp, .shx, .prj,
+                            .dbf).</p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Shapefile (.shp)</label>
+                                {{ form.gis_mapping_shp.errors }}
+                                {{ form.gis_mapping_shp }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Index (.shx)</label>
+                                {{ form.gis_mapping_shx.errors }}
+                                {{ form.gis_mapping_shx }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Projection (.prj)</label>
+                                {{ form.gis_mapping_prj.errors }}
+                                {{ form.gis_mapping_prj }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Database (.dbf)</label>
+                                {{ form.gis_mapping_dbf.errors }}
+                                {{ form.gis_mapping_dbf }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MIU -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        MIU Shapefiles
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">Upload all required shapefile components (.shp, .shx, .prj,
+                            .dbf).</p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Shapefile (.shp)</label>
+                                {{ form.miu_shp.errors }}
+                                {{ form.miu_shp }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Index (.shx)</label>
+                                {{ form.miu_shx.errors }}
+                                {{ form.miu_shx }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Projection (.prj)</label>
+                                {{ form.miu_prj.errors }}
+                                {{ form.miu_prj }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Database (.dbf)</label>
+                                {{ form.miu_dbf.errors }}
+                                {{ form.miu_dbf }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- NBAL -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white fw-bold">
+                        NBAL Shapefiles
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">Upload all required shapefile components (.shp, .shx, .prj,
+                            .dbf).</p>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Shapefile (.shp)</label>
+                                {{ form.nbal_shp.errors }}
+                                {{ form.nbal_shp }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Index (.shx)</label>
+                                {{ form.nbal_shx.errors }}
+                                {{ form.nbal_shx }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Projection (.prj)</label>
+                                {{ form.nbal_prj.errors }}
+                                {{ form.nbal_prj }}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Database (.dbf)</label>
+                                {{ form.nbal_dbf.errors }}
+                                {{ form.nbal_dbf }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- CSV & Excel Uploads -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-success text-white fw-bold">
+                        CSV & Excel Uploads
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">
+                            Please upload the required CSV and Excel files for compartment priorities and linked species
+                            data.
+                        </p>
+
+                        <div class="mb-3">
+                            <label class="form-label">Compartment Priorities (CSV)</label>
+                            {{ form.compartment_priorities_csv.errors }}
+                            {{ form.compartment_priorities_csv }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">MIU Linked Species (Excel)</label>
+                            {{ form.miu_linked_species_excel.errors }}
+                            {{ form.miu_linked_species_excel }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">NBAL Linked Species (Excel)</label>
+                            {{ form.nbal_linked_species_excel.errors }}
+                            {{ form.nbal_linked_species_excel }}
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="{% url 'project:project_list' %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to List
+                    </a>
+                    <button type="submit" class="btn btn-success fw-bold">
+                        <i class="bi bi-check-circle"></i> Create Project
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

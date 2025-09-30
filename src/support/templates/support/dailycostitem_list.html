@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- support daily cost item list -->
+<!-- Author: Kirodh Boodhraj-->
+<h2>Daily Cost Items for {{ costing_model.name }}</h2>
+
+<a href="{% url 'support:dailycost_add' costing_model.id %}" class="btn btn-success mb-3">Add Daily Cost Item</a>
+<a href="{% url 'support:costingmodel_list' %}" class="btn btn-secondary mb-3">Back to Models</a>
+
+<div class="card">
+    <div class="card-body p-0">
+        <table class="table table-bordered table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Item</th>
+                    <th>Cost</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in page_obj %}
+                <tr>
+                    <td>{{ item.daily_cost_item }}</td>
+                    <td>{{ item.daily_item_cost }}</td>
+                    <td>
+                        <a href="{% url 'support:dailycost_update' item.id %}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{% url 'support:dailycost_delete' item.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center">No daily cost items found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer">
+        <button id="toggle-pagination-btn" class="btn btn-secondary mb-3">Show Pagination</button>
+
+        <nav id="pagination-container" style="display: none;">
+            <ul class="pagination mb-0">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                <li class="page-item {% if num == page_obj.number %}active{% endif %}">
+                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                </li>
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('toggle-pagination-btn');
+  const pagination = document.getElementById('pagination-container');
+
+  toggleBtn.addEventListener('click', () => {
+    if (pagination.style.display === 'none') {
+      pagination.style.display = 'block';
+      toggleBtn.textContent = 'Hide Pagination';
+    } else {
+      pagination.style.display = 'none';
+      toggleBtn.textContent = 'Show Pagination';
+    }
+  });
+</script>
+
+{% endblock %}

@@ -1,0 +1,519 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+{% endblock %}
+
+{% block content %}
+<!-- visualization graphs, map and table view-->
+<!-- Author: Kirodh Boodhraj-->
+
+<style>
+.dataframe {
+    width: 100%;
+    overflow-x: auto;
+    max-height: 400px;      /* scrollable by default */
+    overflow-y: auto;       /* vertical scroll */
+    display: block;
+}
+
+.no-scroll {
+    max-height: none;       /* full height */
+}
+
+
+  #map {
+  height: 60vh;
+  width: 100%;
+}
+</style>
+
+<div class="container mt-4">
+
+  <!-- Title -->
+  <div class="container mt-5">
+    <h1 class="mb-4">Planning Results for
+      <span class="text-primary">{{ planning.project.name }}</span></h1>
+    <p class="lead">
+        Your results are displayed below. You can download a PDF of the current selected year here:
+    </p>
+    <!-- PDF Download -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <button class="btn btn-primary" onclick="downloadPDF()">
+        <i class="bi bi-file-earmark-pdf"></i> Download PDF Report
+       </button>
+    </div>
+  </div>
+
+
+  <br>
+  <br>
+
+  <!-- Charts -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-success text-white fw-bold">
+      <h4 id="graphs-title" class="mb-0">Timeseries Graphs & Costing Charts</h4>
+    </div>
+    <div class="card-body">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <canvas id="densityChart" height="150"></canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas id="flowChart" height="150"></canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas id="personDaysChart" height="150"></canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas id="costChart" height="150"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<br>
+<br>
+
+
+    <!-- Filter Card -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white fw-bold">
+      <h4 id="filters-title" class="mb-0">Filters</h4>
+    </div>
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <label class="form-label fw-bold">Year</label>
+          <select id="year" class="form-select">
+            {% for y in years %}
+              <option value="{{ y }}">{{ y }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label fw-bold">Budget</label>
+          <select id="budget" class="form-select">
+            {% for b in budgets %}
+              <option value="{{ b }}">{{ b }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label fw-bold">Level</label>
+          <select id="level" class="form-select">
+            <option value="compartment">Compartment</option>
+            <option value="miu">MIU</option>
+            <option value="nbal">NBAL</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+<br>
+
+  <!-- Budget Card -->
+  <div class="card shadow-sm mb-4" id="budget-card" style="display: none;">
+    <div class="card-header bg-warning text-dark fw-bold">
+        <h4 id="budget-title" class="mb-0">Budget Summary</h4>
+    </div>
+    <div class="card-body" id="budget-results">
+      <p class="text-muted">No budget values yet.</p>
+    </div>
+  </div>
+
+  <br>
+<br>
+
+
+  <!-- Data Table -->
+<div class="card shadow-sm mb-4">
+  <div class="card-header bg-secondary text-white fw-bold d-flex justify-content-between align-items-center">
+    <h4 id="data-table-title" class="mb-0">Data Table</h4>
+    <button class="btn btn-sm btn-light text-dark" onclick="toggleScroll()">Toggle Scroll</button>
+  </div>
+  <div class="card-body" id="results">
+    <p class="text-muted">Select filters above to view results.</p>
+  </div>
+</div>
+
+  <br>
+<br>
+
+  <!-- Map -->
+<!-- load js packages -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-info text-white fw-bold">
+      <h4 id="map-title" class="mb-0">Map</h4>
+    </div>
+    <div class="card-body">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+
+
+<!-- data table and budgets -->
+<script>
+
+  function toggleScroll() {
+    document.querySelectorAll('#results table').forEach(table => {
+        table.classList.toggle('no-scroll');
+    });
+}
+
+// Render table
+function renderTable(data) {
+    const resultsDiv = document.getElementById("results");
+    if (!data || data.length === 0) {
+        resultsDiv.innerHTML = "<p class='text-muted'>No results found for this selection.</p>";
+        return;
+    }
+
+    let html = "<table class='table table-sm table-bordered align-middle dataframe'><thead><tr>";
+    Object.keys(data[0]).forEach(key => html += `<th>${key}</th>`);
+    html += "</tr></thead><tbody>";
+    data.forEach(row => {
+        html += "<tr>";
+        Object.values(row).forEach(val => html += `<td>${val}</td>`);
+        html += "</tr>";
+    });
+    html += "</tbody></table>";
+
+    resultsDiv.innerHTML = html;
+}
+
+let charts = {};
+
+function loadData() {
+    const year = document.getElementById("year").value;
+    const budget = document.getElementById("budget").value;
+    const level = document.getElementById("level").value;
+
+    document.getElementById("budget-title").innerText = `Budget Summary for Year ${year}`;
+    document.getElementById("data-table-title").innerText = `Data Table for Year ${year} for ${level} ${budget} budget`;
+
+    fetch(`/visualization/data/{{ planning.id }}/?year=${year}&budget=${budget}&level=${level}`)
+    .then(res => res.json())
+    .then(data => {
+
+        renderTable(data.table);
+
+
+        const optimalBudget = data.optimal_budget || 0;
+        if (data.budget_totals) {
+            let totalsHtml = "<ul class='list-group list-group-flush'>";
+            for (const [k,v] of Object.entries(data.budget_totals)) {
+                let label = "budget_" + k.replace("plan_", "");  // plan_1 -> budget_1
+                totalsHtml += `<li class="list-group-item d-flex justify-content-between">
+                                <span>${label}</span>
+                                <span class="fw-bold">${data.currency} ${v.toLocaleString()}</span>
+                              </li>`;
+            }
+            totalsHtml += `<li class="list-group-item d-flex justify-content-between bg-light">
+                                <span>Optimal Budget</span>
+                                <span class="fw-bold text-success">${data.currency} ${optimalBudget.toLocaleString()}</span>
+                           </li>`;
+            totalsHtml += "</ul>";
+            document.getElementById("budget-results").innerHTML = totalsHtml;
+            document.getElementById("budget-card").style.display = "block";
+        } else {
+            document.getElementById("budget-card").style.display = "none";
+        }
+    });
+
+    fetch(`/visualization/timeseries/{{ planning.id }}/`)
+    .then(res => res.json())
+    .then(data => {
+        const years = [...new Set(Object.values(data).flat().map(d => Number(d.year)))].sort((a,b)=>a-b);
+        const budgets = Object.keys(data).filter(k => k !== "optimal");
+        const optimalData = data["optimal"] || [];
+
+        function buildLineChart(canvasId, metric, yLabel, title) {
+            const ctx = document.getElementById(canvasId).getContext("2d");
+            if (charts[canvasId]) charts[canvasId].destroy();
+
+            charts[canvasId] = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: budgets.map((b,i)=>({
+                        label: b,
+                        data: years.map(y => {
+                            const yr = data[b].find(d => Number(d.year) === y);
+                            return yr ? yr[metric] : 0;
+                        }),
+                        borderWidth: 2,
+                        tension: 0.3,
+                        fill: false,
+                        borderColor: `hsl(${i*60}, 70%, 50%)`,
+                        pointRadius: 5,
+                        pointHoverRadius: 8
+                    })).concat([{
+                        label: "Optimal",
+                        data: years.map(y => {
+                            const yr = optimalData.find(d => Number(d.year) === y);
+                            return yr ? yr[metric] : 0;
+                        }),
+                        type: "line",
+                        borderColor: "black",
+                        borderWidth: 2,
+                        borderDash: [5,5],
+                        pointStyle: "star",     // ⭐ star marker
+                        pointRadius: 5,        // bigger size so it stands out
+                        fill: false,
+                        tension: 0.3,
+                        //pointRadius: 5,
+                        pointHoverRadius: 8
+                    }])
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: { display: true, text: title },
+                        legend: { position: 'bottom', labels: { usePointStyle: true } },
+                        tooltip: { mode: 'index', intersect: false },
+                        zoom: {
+                            pan: { enabled: true, mode: 'xy' },
+                            zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'xy' },
+                            limits: { y: { min: 'original', max: 'original' } }
+                        },
+                        decimation: { enabled: true, algorithm: 'lttb', samples: 50 } // performance for large datasets
+                    },
+                    hover: { mode: 'nearest', intersect: true },
+                    scales: { y: { title: { display: true, text: yLabel }, beginAtZero: false } },
+                    animation: { duration: 500 }
+                }
+            });
+        }
+
+        function buildBarChartWithOptimal(canvasId, metric, yLabel, title) {
+            const ctx = document.getElementById(canvasId).getContext("2d");
+            if (charts[canvasId]) charts[canvasId].destroy();
+
+            const datasets = budgets.map((b,i)=>({
+                label: b,
+                data: years.map(y => {
+                    const yr = data[b].find(d => Number(d.year) === y);
+                    return yr ? yr[metric] : 0;
+                }),
+                backgroundColor: `hsl(${i*60}, 70%, 50%)`
+            }));
+
+            datasets.push({
+                label: "Optimal",
+                data: years.map(y => {
+                    const yr = optimalData.find(d => Number(d.year) === y);
+                    return yr ? yr[metric] : 0;
+                }),
+                type: 'line',
+                borderColor: 'black',
+                borderWidth: 2,
+                borderDash: [5,5],
+                pointStyle: "star",     // ⭐ star marker
+                pointRadius: 5,        // bigger size so it stands out
+                fill: false,
+                tension: 0.3,
+                //pointRadius: 5,
+                pointHoverRadius: 8
+            });
+
+            charts[canvasId] = new Chart(ctx, {
+                type: 'bar',
+                data: { labels: years, datasets: datasets },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: { display: true, text: title },
+                        legend: { position: 'bottom', labels: { usePointStyle: true } },
+                        tooltip: { mode: 'index', intersect: false },
+                        zoom: {
+                            pan: { enabled: true, mode: 'xy' },
+                            zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'xy' },
+                            limits: { y: { min: 'original', max: 'original' } }
+                        },
+                        decimation: { enabled: true, algorithm: 'lttb', samples: 50 }
+                    },
+                    hover: { mode: 'nearest', intersect: true },
+                    scales: { y: { title: { display: true, text: yLabel }, beginAtZero: false } },
+                    animation: { duration: 500 }
+                }
+            });
+        }
+
+        buildLineChart("densityChart", "density", "%", "Density (%)");
+        buildLineChart("flowChart", "flow", "m³/s", "Flow (m³/s)");
+        buildLineChart("personDaysChart", "person_days", "Person Days", "Person Days");
+        buildBarChartWithOptimal("costChart", "cost", "{{ planning.currency }}", "Cost per Year");
+    });
+}
+
+// Reload when filters change
+["year","budget","level"].forEach(id => {
+    document.getElementById(id).addEventListener("change", loadData);
+});
+
+// Initial load
+loadData();
+</script>
+
+<!-- make sure the id is availalbe to be passed for the map data-->
+<script>
+const planningId = {{ planning.id }};
+</script>
+
+<!-- map -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize map
+    var map = L.map('map').setView([-33.9, 19.2], 13);
+
+    // Add base tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Function to assign random colors (can also do based on property)
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    let geojsonLayer;  // store reference so we can remove it
+    let overlaysControl; // for layer control
+
+    function loadMap() {
+    // Define planningId, year, budget, level (replace with your template vars if using Django)
+        const planningId = {{ planning.id }};
+        const year = document.getElementById("year").value;
+        const budget = document.getElementById("budget").value;
+        const level = document.getElementById("level").value;
+
+    // change map heading name
+        document.getElementById("map-title").innerText = `Map for Year ${year} for ${budget} budget`;
+
+
+    // Fetch GeoJSON from Django view
+    fetch(`/visualization/map_data/${planningId}/?year=${year}&budget=${budget}&level=${level}`)
+        .then(response => response.json())
+        .then(data => {
+
+          // Remove old layer if exists
+            if (geojsonLayer) {
+                map.removeLayer(geojsonLayer);
+                if (overlaysControl) {
+                    overlaysControl.removeLayer(geojsonLayer);
+                }
+            }
+
+            // Add GeoJSON layer
+            geojsonLayer = L.geoJSON(data.gis_mapping_geojson, {
+                style: function(feature) {
+                    return {
+                        color: getRandomColor(),  // different border color
+                        weight: 2,
+                        fillOpacity: 0.4
+                    };
+                },
+
+                  onEachFeature: function(feature, layer) {
+                      let props = feature.properties;
+                      let popupHtml = `<strong>Compartment:</strong> ${props.compartment}<br>
+                                       <strong>MIU:</strong> ${props.miu || "-"}<br>
+                                       <strong>NBAL:</strong> ${props.nbal || "-"}<br>
+                                       <strong>year:</strong> ${year || "-"}<br>`;
+
+                      if (props.priority !== undefined) {
+                          popupHtml += `<hr>
+                                        <strong>Priority:</strong> ${props.priority}<br>
+                                        <strong>Person Days:</strong> ${props.person_days}<br>
+                                        <strong>Cost:</strong> ${props.cost}<br>
+                                        <strong>Density:</strong> ${props.density}<br>
+                                        <strong>Flow:</strong> ${props.flow}<br>
+                                        <strong>Cleared Now:</strong> ${props.cleared_now}<br>
+                                        <strong>Cleared Fully:</strong> ${props.cleared_fully}`;
+                      } else {
+                          popupHtml += `<em>No simulation data</em>`;
+                      }
+
+                      layer.bindPopup(popupHtml);
+                      layer.bindTooltip(`Compartment ${props.compartment}`, {permanent: false});
+
+                      // Zoom to polygon on click
+                      layer.on('click', function() {
+                          map.fitBounds(layer.getBounds());
+                      });
+                  }
+
+            }).addTo(map);
+
+            // Add the layer to the existing control, or create it once
+            if (!overlaysControl) {
+                overlaysControl = L.control.layers(null, { "Polygons": geojsonLayer }).addTo(map);
+            } else {
+                overlaysControl.addOverlay(geojsonLayer, "Polygons");
+            }
+
+
+        });
+}
+
+    // Load map when filters change
+    ["year", "budget", "level"].forEach(id => {
+        document.getElementById(id).addEventListener("change", loadMap);
+    });
+
+    // Initial load
+    loadMap();
+
+    // Ensure map tiles align correctly
+    setTimeout(function () {
+        map.invalidateSize();
+    }, 300);
+
+    // If inside a Bootstrap tab:
+    document.querySelectorAll('button[data-bs-toggle="tab"]').forEach(tabBtn => {
+        tabBtn.addEventListener('shown.bs.tab', function () {
+            map.invalidateSize();
+        });
+    });
+
+    // Optional: add scale, mouse position, etc.
+    L.control.scale().addTo(map);
+});
+
+
+</script>
+
+
+<!-- download pdf -->
+<script>
+function downloadPDF() {
+    const year = document.getElementById("year").value;
+    const budget = document.getElementById("budget").value;
+    // Build URL dynamically
+    const url = `/visualization/pdf/{{ planning.id }}/${year}/${budget}/`;
+    // Redirect browser to download
+    window.location.href = url;
+}
+</script>
+
+{% endblock %}

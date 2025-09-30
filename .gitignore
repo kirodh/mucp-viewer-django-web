@@ -1,0 +1,79 @@
+# Django stuff:
+src/db.sqlite3
+src/db.sqlite3-journal
+
+kirodh_instruction.txt
+kirodh_instructions.txt
+
+
+src/home/__pycache__/
+src/home/migrations/__pycache__/
+src/planning/migrations/__pycache__/
+src/project/__pycache__/
+src/project/migrations/__pycache__/
+src/support/migrations/__pycache__/
+src/visualization/__pycache__/
+src/visualization/migrations/__pycache__/
+src/support/management/commands/__pycache__/
+src/support/management/commands/__pycache__/delete_all_support_data.cpython-312.pyc
+src/support/management/commands/__pycache__/load_default_data.cpython-312.pyc
+
+.git
+
+# certbot
+certbot/*
+certbot/conf/live/mucp.afis.co.za/*
+
+# database data
+mnt
+data
+mnt/postgres
+data/postgres-data
+
+# Environments
+.env
+src/.env
+token
+
+# redis
+redis_data
+
+# pycharm
+.idea/*
+.idea/inspectionProfiles/Project_Default.xml
+
+
+# pycache folders
+src/accounts/__pycache__
+src/accounts/migrations/__pycache__
+src/app/__pycache__
+src/app/conf/__pycache__
+src/app/conf/development/__pycache__
+src/app/conf/production/__pycache__
+src/main/__pycache__
+src/viewer/__pycache__
+src/inputs/__pycache__
+src/outputs/__pycache__
+src/planning/__pycache__
+src/projects/__pycache__
+src/support/__pycache__
+src/app/conf/development/__pycache__/settings.cpython-37.pyc
+src/planning/__pycache__/models.cpython-37.pyc
+src/support/__pycache__/models.cpython-37.pyc
+src/support/__pycache__/urls.cpython-37.pyc
+src/support/__pycache__/views.cpython-37.pyc
+
+
+src/content/media/*
+!src/content/media/.gitkeep
+
+src/app/conf/development/__pycache__/*
+src/support/__pycache__/views.cpython-37.pyc
+src/app/conf/development/__pycache__/*
+src/app/conf/development/__pycache__/settings.cpython-37.pyc
+src/planning/__pycache__/views.cpython-37.pyc
+src/support/__pycache__/urls.cpython-37.pyc
+src/support/management/commands/__pycache__
+
+
+src/media/projects/*

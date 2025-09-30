@@ -1,0 +1,355 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home - MUCP{% endblock %}
+
+{% block content %}
+<!-- home page -->
+<!-- Author: Kirodh Boodhraj-->
+<h1 class="mb-5 text-center fw-bold">Management Unit Control Plan (MUCP) Tool</h1>
+<p class="card-text text-muted text-center">
+    Empowering sustainable planning and management with modern tools and visualizations.
+</p>
+
+<!-- Hero Image Section -->
+<div class="container-fluid mt-5 text-center" style="max-width: 80vw;">
+    <div class="card border-0 shadow-sm">
+        <img src="{% static 'home/mountain.jpg' %}"
+             class="card-img-top rounded-3"
+             alt="Alien Invasive Tree Species"
+             style="object-fit: cover; max-height: 500px;">
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+<div class="row">
+    <!-- What is the MUCP tool -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">What is the MUCP tool?</h5>
+                <p class="card-text">
+                    <a href="https://drive.google.com/file/d/1JrkZ9PTpu7Mq2Z1LwyTcViloMY9z1_S5/view?usp=sharing"
+                       target="_blank" class="fw-bold text-decoration-none text-primary fst-italic">
+                       Le Maitre et al. (2012)
+                    </a> developed a generic species and area prioritization model (MUCP Tool) for use in
+                    prioritising invasive alien plant control operations in South Africa using
+                    <a href="https://drive.google.com/file/d/1n7XukRGHbhfSGMOOX6hEqsnJmT7xcjG8/view?usp=sharing"
+                       target="_blank" class="fw-bold text-decoration-none text-primary fst-italic">
+                       spatial data
+                    </a> and
+                    <a href="https://drive.google.com/file/d/1g-7kKnIyWGHQ_NTQO5Mlh2DCAi7pg0ff/view?usp=sharing"
+                       target="_blank" class="fw-bold text-decoration-none text-primary fst-italic">
+                       Forsyth et al. (2012)
+                    </a>. It schedules treatments of invasions in the catchment taking into account the current state
+                    of the invasions, benefits of clearing, treatments that are required and the resources provided in
+                    its budget. The MUCP tool does not generate a detailed annual schedule of annual operations but the
+                    DEA-Natural Resources Management (NRM) programme has an Annual Plan of Operations tool which serves
+                    that purpose.
+                </p>
+                <p class="card-text">
+                    Source data:
+                    <a href="https://drive.google.com/file/d/1pbfxRzpeqtJJKvjxE2dGhMV2ldomIWJc/view?usp=sharing"
+                       target="_blank" class="fw-bold text-decoration-none text-primary fst-italic">
+                       2001-2004
+                    </a> and
+                    <a href="https://drive.google.com/file/d/1QIeFLUQ9Jwxm5EoHbLfHEY8WMv4ONsLA/view?usp=sharing"
+                       target="_blank" class="fw-bold text-decoration-none text-primary fst-italic">
+                       2008-2012
+                    </a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Targeted Indicator -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow h-100 border-success">
+            <div class="card-body">
+                <h5 class="card-title text-success">Targeted Indicator (Mission)</h5>
+                <p class="card-text fst-italic">
+                    "This indicator gauges the level of planning input, which should include the setting
+                    of goals, and monitoring and assessment of progress towards those goals."
+                </p>
+                <p class="card-text">
+                    <a href="https://www.sanbi.org/wp-content/uploads/2018/11/National-Status-Report-web-6MB.pdf"
+                       target="_blank" class="fw-bold text-decoration-none text-success fst-italic">
+                       Van Wilgen, B.W. & Wilson, J.R. (Eds.) 2018
+                    </a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Use of MUCP tool -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow h-100 border-info">
+            <div class="card-body">
+                <h5 class="card-title text-info">Use of MUCP tool</h5>
+                <p class="card-text">
+                    The tool can be used online or as a separate desktop version. Your data will not be
+                    used without your consent. Navigate to the Support, Planning, Projects and the
+                    Visualization tabs to use the tool.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- example case files -->
+<div class="container-fluid mt-5" style="max-width: 70vw;">
+    <div class="accordion shadow-sm" id="mucpExampleCase">
+        <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingExampleCase">
+                <button class="accordion-button collapsed fw-bold text-success" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseExampleCase"
+                        aria-expanded="false" aria-controls="collapseExampleCase">
+                    <i class="bi bi-laptop me-2"></i> Start Here! How to run an example MUCP Case
+                </button>
+            </h2>
+    <div id="collapseExampleCase" class="accordion-collapse collapse" aria-labelledby="headingExampleCase" data-bs-parent="#exampleCaseAccordion">
+      <div class="accordion-body">
+        <div class="row">
+            <div>Here are sample files that you can download and use as a test case for the MUCP tool.</div>
+            <br>
+            <br>
+            <br>
+          <div class="col-sm">
+              <a href="{% static 'example_case_files/MUCP_example_files.zip' %}" download class="btn btn-primary">
+                  Download Example MUCP Project Files <5Mb
+              </a>
+          </div>
+              <br><br><br>
+
+          <h3>About the example zip</h3>
+          <p class="text-muted">
+            The downloaded file <code>MUCP_example_files.zip</code> contains a ready-to-use example MUCP project. It includes:
+          </p>
+
+          <ul>
+            <li><strong>Four shapefiles</strong> (each with its supporting <code>.shx</code>, <code>.dbf</code>, <code>.prj</code>, etc.):
+              <ul>
+                <li><code>H60B_compartments_tm19.shp</code></li>
+                <li><code>H60B_GIS_mapping_tm19.shp</code></li>
+                <li><code>H60B_MIU_tm19.shp</code></li>
+                <li><code>H60B_NBAL_tm19.shp</code></li>
+              </ul>
+            </li>
+            <li><strong>Two Excel files</strong> (species link tables):
+              <ul>
+                <li><code>H60B_NBAL_linked_species.xlsx</code></li>
+                <li><code>H60B_MIU_linked_species.xlsx</code></li>
+              </ul>
+            </li>
+            <li><strong>One CSV</strong> (prioritisation categories):
+              <ul>
+                <li><code>H60B_compartments_priorities.csv</code></li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3>How to upload these files</h3>
+          <p>
+            Before uploading, please complete any required entries in the <strong>Support</strong> section (growth forms, treatment methods, species, clearing norms, prioritisation categories and cost models). Once your support data is in place:
+          </p>
+
+          <ol>
+            <li><strong>Download</strong> the <code>MUCP_example_files.zip</code> and extract it on your machine.</li>
+            <li><strong>Verify shapefile completeness:</strong> each shapefile must include its companion files (<code>.shp, .shx, .dbf, .prj</code>). Uploading a single <code>.shp</code> without the others will cause errors.</li>
+            <li><strong>Upload order on the Project page:</strong>
+              <ol type="a">
+                <li>Upload the <code>H60B_compartments_tm19.*</code> file first (the compartments define the reporting units).</li>
+                <li>Then upload <code>H60B_MIU_tm19.*</code>, <code>H60B_NBAL_tm19.*</code> and <code>H60B_GIS_mapping_tm19.*</code> as needed.</li>
+                <li>Upload the two Excel species lists and the CSV priorities file.</li>
+              </ol>
+            </li>
+            <li><strong>Validate:</strong> after upload, open the Project preview / mapping tab and confirm geometries display correctly, attributes (IDs) match the species/priority tables, and there are no topology gaps or missing fields.</li>
+            <li><strong>Run a small test simulation</strong> or preview to ensure values (area, density, cost) behave as expected.</li>
+          </ol>
+
+          <h4 class="mt-3">Quick tips</h4>
+          <ul>
+            <li>Keep the shapefile component files together in the same folder before zipping or uploading.</li>
+            <li>If you see unexpected results, check that the <strong>Compartment IDs</strong> in attributes match those in the priority CSV and species Excel files.</li>
+          </ul>
+
+          <br>
+          <h3>How to upload files.</h3>
+          <p>
+            Use the <strong>Project -> Projects -> Add Project Button</strong> upload form. Choose the correct file type (Compartment / MIU / NBAL / Mapping / Species / Priorities) and attach the relevant file. After upload, press <em>Create Project</em> to upload the files. Once you create a planning for the project, the system will run automatic checks and will flag missing attributes or mismatched IDs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Previous Use Cases Accordion Section -->
+<div class="container-fluid mt-5" style="max-width: 70vw;">
+    <div class="accordion shadow-sm" id="mucpUseCasesAccordion">
+        <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingUseCases">
+                <button class="accordion-button collapsed fw-bold text-success" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseUseCases"
+                        aria-expanded="false" aria-controls="collapseUseCases">
+                    <i class="bi bi-journal-text me-2"></i> Previous Use Cases of the MUCP Tool
+                </button>
+            </h2>
+            <div id="collapseUseCases" class="accordion-collapse collapse"
+                 aria-labelledby="headingUseCases" data-bs-parent="#mucpUseCasesAccordion">
+                <div class="accordion-body">
+
+                    <div class="container-fluid text-center">
+                        <div class="row mb-3">
+                            <div class="col-sm">
+                                <embed src="{% static 'pdfs/MUCPs for Holsloot, Karatara & Keurbooms catchments.pdf' %}"
+                                       type="application/pdf" width="100%" height="600px" class="border rounded shadow-sm"/>
+                            </div>
+                            <div class="col-sm">
+                                <embed src="{% static 'pdfs/Simonsberg MUCP_version 18 Mar 2016.pdf' %}"
+                                       type="application/pdf" width="100%" height="600px" class="border rounded shadow-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm">
+                                <embed src="{% static 'pdfs/Upper Berg River MUCP_Ver 4.pdf' %}"
+                                       type="application/pdf" width="100%" height="600px" class="border rounded shadow-sm"/>
+                            </div>
+                            <div class="col-sm">
+                                <embed src="{% static 'pdfs/Waterval MUCP_2016.pdf' %}"
+                                       type="application/pdf" width="100%" height="600px" class="border rounded shadow-sm"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Acknowledgements Accordion Section -->
+<div class="container-fluid mt-5" style="max-width: 70vw;">
+    <div class="accordion shadow-sm" id="DIVcollapseAcknowlegement">
+        <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingcollapseAcknowlegement">
+                <button class="accordion-button collapsed fw-bold text-success" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseAcknowlegement"
+                        aria-expanded="false" aria-controls="collapseAcknowlegement">
+                    <i class="bi bi-journal-text me-2"></i>Acknowledgements
+                </button>
+            </h2>
+            <div id="collapseAcknowlegement" class="accordion-collapse collapse"
+                 aria-labelledby="headingUseCases" data-bs-parent="#mucpUseCasesAccordion">
+                <div class="accordion-body">
+
+                    <div class="container-fluid text-center">
+                        <p>
+                            Derek Malan, the previous technical manager for Working for Water Programme (WfW) in the
+Western Cape (now retired), and Wessel Wentzel were prime movers within WfW, and together
+with Nigel Wessel (previously of CapeNature), realized that a focus on a systematic, area and
+priority based, catchment-level approach to clearing invasive alien plants was needed rather than
+the current, largely unsystematic approach.
+                            <br>
+                            <br>
+We have worked closely with Anthony Robinson of Handmade Connections to modify the pro-type
+MUCP tool to make it into a flexible and robust operational planning tool.
+                            <br>
+                            <br>
+The authors wish to acknowledge the following persons and organisations for their valuable
+contributions: Andrew Wannenburgh of the Department of Environment Affairs’ Chief Directorate:
+Natural Resources Management (NRM) for guidance and support. Tony Marshall who managers
+CapeNature’s Integrated Catchment Monitoring Programme for his support in operationalizing of
+the MUCP tool and Therese Forsyth CapeNature’s GIS Scientist, an early user of the MUCP tool, for
+technical input and proof reading the guide.
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MUCP Tool Desktop Section -->
+<div class="container-fluid mt-5" style="max-width: 70vw;">
+    <div class="accordion shadow-sm" id="mucpDesktopAccordion">
+        <div class="accordion-item border-0">
+            <h2 class="accordion-header" id="headingDesktop">
+                <button class="accordion-button collapsed fw-bold text-success" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseDesktop"
+                        aria-expanded="false" aria-controls="collapseDesktop">
+                    <i class="bi bi-laptop me-2"></i> Desktop Version & Support Files
+                </button>
+            </h2>
+            <div id="collapseDesktop" class="accordion-collapse collapse"
+                 aria-labelledby="headingDesktop" data-bs-parent="#mucpDesktopAccordion">
+                <div class="accordion-body text-center">
+
+                    <p class="mb-4">
+                        The MUCP Tool can be used online or as a separate desktop version.
+                        Note that the desktop version is older than the current online tool and now deprecated. Use at your own risk.
+                    </p>
+
+                    <div class="row my-3">
+                        <div class="col-sm mb-2">
+                            <a href="http://www.google.com/url?q=http%3A%2F%2Fdevcenter.handmade.co.za%2Fftp%2FMUCP_Install.exe&sa=D&sntz=1&usg=AOvVaw2D81L110gBediRMZmlZvqy"
+                               target="_blank"
+                               class="btn btn-outline-primary w-100 fw-bold">
+                                <i class="bi bi-download me-1"></i> MUCP Desktop Software
+                            </a>
+                        </div>
+                        <div class="col-sm mb-2">
+                            <a href="{% static 'pdfs/MUCP_Tool_Guideline_Version 2.00.001-1.pdf' %}"
+                               target="_blank"
+                               class="btn btn-outline-primary w-100 fw-bold">
+                                <i class="bi bi-book me-1"></i> Software Manual
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="mt-4">Support files and sample input data:</p>
+                    <div class="row">
+                        <div class="col-sm mb-2">
+                            <a href="https://drive.google.com/open?id=1UQ9E-fr2U5LLcRCmkHA91U-LcKajxWBs"
+                               target="_blank"
+                               class="btn btn-outline-secondary w-100 fw-bold">
+                                <i class="bi bi-file-earmark-spreadsheet me-1"></i> Sample MUCP Input Data
+                            </a>
+                        </div>
+                        <div class="col-sm mb-2">
+                            <a href="https://www.dropbox.com/scl/fo/b7b8bf04nvzx26xqvu0cs/h?dl=0&rlkey=ntvccjsl168528mn2lf2q5dz9"
+                               target="_blank"
+                               class="btn btn-outline-secondary w-100 fw-bold">
+                                <i class="bi bi-folder-symlink me-1"></i> SA Compartments (Dropbox)
+                            </a>
+                        </div>
+                        <div class="col-sm mb-2">
+                            <a href="https://www.dropbox.com/scl/fo/b7b8bf04nvzx26xqvu0cs/h?dl=0&rlkey=ntvccjsl168528mn2lf2q5dz9"
+                               target="_blank"
+                               class="btn btn-outline-secondary w-100 fw-bold">
+                                <i class="bi bi-folder-symlink-fill me-1"></i> SA Compartments (Alternate)
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

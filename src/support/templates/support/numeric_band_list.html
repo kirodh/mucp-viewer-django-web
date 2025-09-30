@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Numeric Bands for {{ category.name }}{% endblock %}
+{% block content %}
+<!-- support numeric priority band list -->
+<!-- Author: Kirodh Boodhraj-->
+<h1>Numeric Priority Bands for "{{ category.name }}"</h1>
+{% if category.user %} {# Only show if NOT a system default category #}
+<a href="{% url 'support:numeric_band_create' category.pk %}" class="btn btn-primary mb-3">Add Priority Band</a>
+{% endif %}
+
+<a href="{% url 'support:category_list' %}" class="btn btn-secondary mb-3">Back to Categories</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Range Low</th>
+            <th>Range High</th>
+            <th>Priority</th>
+            {% if category.user %}
+            <th>Actions</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for band in bands %}
+        <tr>
+            <td>{{ band.range_low }}</td>
+            <td>{{ band.range_high }}</td>
+            <td>{{ band.priority }}</td>
+            {% if category.user %}
+            <td>
+                <a href="{% url 'support:numeric_band_update' band.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{% url 'support:numeric_band_delete' band.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+            {% endif %}
+        </tr>
+    {% empty %}
+        <tr><td colspan="4" class="text-center">No bands found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

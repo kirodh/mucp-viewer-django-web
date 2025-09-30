@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Delete Numeric Band{% endblock %}
+{% block content %}
+<!-- support numeric priority band confirm delete -->
+<!-- Author: Kirodh Boodhraj-->
+<h1>Delete Numeric Band</h1>
+<p>Are you sure you want to delete this band: {{ object }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <a href="{% url 'support:numeric_band_list' object.category.pk %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

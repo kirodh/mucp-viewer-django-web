@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- support costing model list -->
+<!-- Author: Kirodh Boodhraj-->
+<h2>My Costing Models</h2>
+<a class="btn btn-primary" href="{% url 'support:costingmodel_create' %}">Add Costing Model</a>
+<table class="table mt-3">
+    <tr>
+        <th>Name</th>
+        <th>Initial Team Size</th>
+        <th>Initial Cost/Day</th>
+        <th>Follow-up Team Size</th>
+        <th>Follow-up Cost/Day</th>
+        <th>Vehicle Cost/Day</th>
+        <th>Fuel Cost/Hour</th>
+        <th>Maintenance Level</th>
+        <th>Total Cost/Day</th>
+        <th>Actions</th>
+    </tr>
+    {% for model in models %}
+    <tr>
+        <td>{{ model.name }}</td>
+        <td>{{ model.initial_team_size }}</td>
+        <td>{{ model.initial_cost_per_day }}</td>
+        <td>{{ model.followup_team_size }}</td>
+        <td>{{ model.followup_cost_per_day }}</td>
+        <td>{{ model.vehicle_cost_per_day }}</td>
+        <td>{{ model.fuel_cost_per_hour }}</td>
+        <td>{{ model.maintenance_level }}</td>
+        <td>{{ model.total_cost_per_day }}</td>
+        <td>
+            <a href="{% url 'support:costingmodel_update' model.id %}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{% url 'support:costingmodel_delete' model.id %}" class="btn btn-sm btn-danger">Delete</a>
+            <a href="{% url 'support:dailycost_list' model.id %}" class="btn btn-sm btn-info">View Daily Items</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="10">No costing models found.</td></tr>
+    {% endfor %}
+</table>
+
+
+<!-- Pagination block -->
+<div class="card-footer">
+    <button id="toggle-pagination-btn" class="btn btn-secondary mb-3">Show Pagination</button>
+
+    <nav id="pagination-container" style="display: none;">
+        <ul class="pagination mb-0">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            </li>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+            <li class="page-item {% if num == page_obj.number %}active{% endif %}">
+                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+            </li>
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+
+<script>
+    // Simple toggle for pagination visibility
+    document.getElementById("toggle-pagination-btn").addEventListener("click", function () {
+        const container = document.getElementById("pagination-container");
+        container.style.display = (container.style.display === "none") ? "block" : "none";
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Project{% endblock %}
+
+{% block content %}
+<!-- project home -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container mt-4">
+    <h1 class="mb-4">Project</h1>
+    <p class="lead">This section provides detailed information on how to prepare and upload project files for the Management Unit Control Plan (MUCP) tool. Please expand each section below for guidance.</p>
+
+    <div class="accordion" id="projectAccordion">
+
+        <!-- Overview -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOverview">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOverview" aria-expanded="false" aria-controls="collapseOverview">
+                    📘 Overview
+                </button>
+            </h2>
+            <div id="collapseOverview" class="accordion-collapse collapse" aria-labelledby="headingOverview" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>
+                        The MUCP tool organizes spatial and ecological information to manage and track invasive alien plant treatments.
+                        Compartments are the fixed management units, while MIUs (Mapped Invaded Units) and NBALs (treated units) provide the dynamic treatment history.
+                    </p>
+                    <p>
+                        Users can create a project with a unique name and must upload shapefiles and spreadsheets as described in the sections below.
+                        Each shapefile requires four components: <code>.shp</code>, <code>.shx</code>, <code>.dbf</code>, and <code>.prj</code>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Upload Project Files -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingUpload">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpload" aria-expanded="false" aria-controls="collapseUpload">
+                    ⬆️ How to Upload Project Files
+                </button>
+            </h2>
+            <div id="collapseUpload" class="accordion-collapse collapse" aria-labelledby="headingUpload" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <ul>
+                        <li>Each <strong>shapefile</strong> upload requires <code>.shp</code>, <code>.shx</code>, <code>.dbf</code>, and <code>.prj</code> files.</li>
+                        <li>Linked species data must be provided in Excel format (<code>.xlsx</code>).</li>
+                        <li>Prioritization categories should be uploaded as a <code>.csv</code> file with correctly named headers.</li>
+                        <li>Ensure all spatial layers align with compartments for consistency.</li>
+                        <li>All file headers are converted to lower case in the tool. Please ensure the header names match the below sections. The tool will not work if the name is incorrect, but will still work if the case (lower or upper) does not match the below sections.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compartments Shapefile -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCompartments">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCompartments" aria-expanded="false" aria-controls="collapseCompartments">
+                    🗂️ Compartments Shapefile
+                </button>
+            </h2>
+            <div id="collapseCompartments" class="accordion-collapse collapse" aria-labelledby="headingCompartments" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>Compartments are permanent management units used to assign priorities and track progress.</p>
+                    <p><strong>Required attributes:</strong></p>
+                    <ul>
+                        <li><code>Compt_ID</code> – Unique compartment identifier</li>
+                        <li><code>Area_ha</code> – Area in hectares</li>
+                        <li><code>SLOPE</code> – Slope in degrees</li>
+                        <li><code>Walk_time</code>, <code>Drive_time</code>, <code>Terrain</code> – Accessibility</li>
+                        <li><code>Costing</code> – Link to cost model</li>
+                        <li><code>Grow_con</code> – Growing conditions</li>
+                    </ul>
+                    <p>Derived data includes slope classification, walking/driving distances, and accessibility metrics.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MIU Shapefile -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMIU">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMIU" aria-expanded="false" aria-controls="collapseMIU">
+                    🌱 MIU Shapefile (Mapped Invaded Units)
+                </button>
+            </h2>
+            <div id="collapseMIU" class="accordion-collapse collapse" aria-labelledby="headingMIU" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>MIUs represent all mapped invasions, whether treated or not.</p>
+                    <p><strong>Required attributes:</strong></p>
+                    <ul>
+                        <li><code>MIU_ID</code> – Unique MIU identifier</li>
+                        <li><code>Area</code> – Area in hectares</li>
+                        <li><code>Riparian_c</code> – “r” for riparian, “l” for landscape</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- NBAL Shapefile -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNBAL">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNBAL" aria-expanded="false" aria-controls="collapseNBAL">
+                    🛠️ NBAL Shapefile (Treatment Units)
+                </button>
+            </h2>
+            <div id="collapseNBAL" class="accordion-collapse collapse" aria-labelledby="headingNBAL" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>NBALs represent areas with one or more treatments.</p>
+                    <p><strong>Required attributes:</strong></p>
+                    <ul>
+                        <li><code>NBAL_ID</code> – Unique NBAL identifier</li>
+                        <li><code>Stage</code> – Treatment stage (Initial, Follow-ups, Maintenance, Rehabilitation)</li>
+                        <li><code>First_date</code>, <code>Last_date</code> – Treatment dates</li>
+                        <li><code>Area</code> – Area in hectares</li>
+                        <li><code>ContractID</code> – Link to WIMS contract</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- GIS Mapping Shapefile -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGIS">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGIS" aria-expanded="false" aria-controls="collapseGIS">
+                    🗺️ GIS Mapping Shapefile
+                </button>
+            </h2>
+            <div id="collapseGIS" class="accordion-collapse collapse" aria-labelledby="headingGIS" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>This is a GIS union of the Compartment, MIU, and NBAL shapefiles, enabling the tool to link treatment units to compartments.</p>
+                    <p><strong>Required attributes:</strong></p>
+                    <ul>
+                        <li><code>NBAL_ID</code> – Unique NBAL identifier</li>
+                        <li><code>MIU_ID</code> – Unique MIU identifier</li>
+                        <li><code>COMPT_ID</code> – Unique COMPARTMENT identifier</li>
+                        <li><code>AREA</code> – Area in hectares</li>
+                    </ul>
+                    <br>
+                    <h3>Importance of Accurate Topology</h3>
+                    <p>
+                        When uploading mapping files, it’s important to ensure your polygons are clean and free of gaps
+                        or overlaps. Gaps (also called slivers) break the continuous surface of your data and can cause
+                        errors in calculations within the MUCP tool. Since the tool uses polygon area in its
+                        calculations, inaccurate topology may lead to incorrect results for planning, reporting, and
+                        decision-making. Always check that your polygons align properly to maintain reliable outputs.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- MIU Linked Species Excel -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMIUSpecies">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMIUSpecies" aria-expanded="false" aria-controls="collapseMIUSpecies">
+                    🌿 MIU Linked Species Excel
+                </button>
+            </h2>
+            <div id="collapseMIUSpecies" class="accordion-collapse collapse" aria-labelledby="headingMIUSpecies" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>Contains invasive plant species data for each MIU.</p>
+                    <p><strong>Required attributes:</strong></p>
+                    <ul>
+                        <li><code>MIU_ID</code> – Identifier</li>
+                        <li><code>Species</code> – Latin name</li>
+                        <li><code>Idenscode</code> – % cover</li>
+                        <li><code>Age</code> – Age class (Seedling, Young, Adult, Coppice)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- NBAL Linked Species Excel -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNBALSpecies">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNBALSpecies" aria-expanded="false" aria-controls="collapseNBALSpecies">
+                    🌳 NBAL Linked Species Excel
+                </button>
+            </h2>
+            <div id="collapseNBALSpecies" class="accordion-collapse collapse" aria-labelledby="headingNBALSpecies" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>Contains invasive plant species data for each treated NBAL.</p>
+                    <p><strong>Required attributes:</strong></p>
+                    <ul>
+                        <li><code>NBAL_id</code> – Identifier</li>
+                        <li><code>Species</code> – Latin name</li>
+                        <li><code>Idenscode</code> – % cover</li>
+                        <li><code>Age</code> – Maturity class (Seedling, Young, Adult, Coppice, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prioritization CSV -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCSV">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCSV" aria-expanded="false" aria-controls="collapseCSV">
+                    📊 Prioritization CSV
+                </button>
+            </h2>
+            <div id="collapseCSV" class="accordion-collapse collapse" aria-labelledby="headingCSV" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>The CSV file defines prioritization categories. Column names must match expected headings.</p>
+                    <p><strong>Required attributes:</strong></p>
+                    <ul>
+                        <li><code>Compt_ID</code> – Compartment identifier</li>
+                    </ul>
+                    <p><strong>Other attribute as examples:</strong></p>
+                    <ul>
+                        <li><code>Aggressiveness</code></li>
+                        <li><code>Biodiversity</code></li>
+                        <li><code>Density</code></li>
+                        <li><code>Rain</code></li>
+                        <li><code>Slope</code></li>
+                        <li><code>Treatments</code></li>
+                        <li><code>Veld Age</code></li>
+                        <li><code>Tourism</code></li>
+                        <li><code>Zone</code></li>
+                        <li><code>Runoff</code> (previously used as <code>MAR [Mean Annual Runoff]</code>) – Required for flow reduction estimates</li>
+                    </ul>
+                    <p>Default: 26 prioritization categories. Users can add custom ones as needed.</p>
+                    <br>
+                    <p>Please note that the flow will only be calculated if Runoff is present in the prioritization otherwise no flow will be in the results.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Guidelines -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGuidelines">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGuidelines" aria-expanded="false" aria-controls="collapseGuidelines">
+                    ⚙️ Technical Preparation Guidelines
+                </button>
+            </h2>
+            <div id="collapseGuidelines" class="accordion-collapse collapse" aria-labelledby="headingGuidelines" data-bs-parent="#projectAccordion">
+                <div class="accordion-body">
+                    <p>
+                        Before using the MUCP tool, ensure the following steps are completed:
+                    </p>
+                    <ul>
+                        <li>Define the project area boundaries (e.g., catchments, conservancies).</li>
+                        <li>Engage stakeholders in workshops to set objectives and priorities.</li>
+                        <li>Create compartments as permanent management units with identifiable boundaries.</li>
+                        <li>Map invasions into MIUs and treatments into NBALs.</li>
+                        <li>Prepare linked species data (Excel) and prioritization categories (CSV).</li>
+                        <li>Align NBAL boundaries with compartments for effective management.</li>
+                        <li>Generate draft long-term plans and validate against budgets and goals.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+

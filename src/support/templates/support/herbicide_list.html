@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- support herbicide list-->
+<!-- Author: Kirodh Boodhraj-->
+<h2>Herbicides (Not Incorporated Into Algorithms Yet)</h2>
+<br>
+<br>
+<br>
+<p>You can search for a species here:</p>
+<form method="get" class="mb-3">
+    <input type="text" name="q" value="{{ search_query }}" placeholder="Search herbicides..." class="form-control" />
+</form>
+<br>
+<br>
+
+<h4>Default Herbicides</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cost/Ltr</th>
+            <th>Ltr/HA</th>
+            <th>Active Ingredient</th>
+            <th>Registration</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for h in default_page %}
+            <tr>
+                <td>{{ h.herbicide }}</td>
+                <td>{{ h.cost_per_litre }}</td>
+                <td>{{ h.litres_per_hectare }}</td>
+                <td>{{ h.active_ingredient }}</td>
+                <td>{{ h.registration_status }}</td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="5">No default herbicides found.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="pagination">{{ default_page.paginator.num_pages }} pages | Page {{ default_page.number }}</div>
+
+<!-- Pagination for Default Herbicides -->
+<nav>
+  <ul class="pagination">
+    {% if default_page.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?default_page={{ default_page.previous_page_number }}&user_page={{ user_page.number }}&q={{ search_query }}">Previous</a>
+      </li>
+    {% endif %}
+
+    {% for num in default_page.paginator.page_range %}
+      <li class="page-item {% if num == default_page.number %}active{% endif %}">
+        <a class="page-link" href="?default_page={{ num }}&user_page={{ user_page.number }}&q={{ search_query }}">{{ num }}</a>
+      </li>
+    {% endfor %}
+
+    {% if default_page.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?default_page={{ default_page.next_page_number }}&user_page={{ user_page.number }}&q={{ search_query }}">Next</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+<br><br><br>
+
+<h4>Your Herbicides</h4>
+<a class="btn btn-success mb-2" href="{% url 'support:herbicide_create' %}">Add Herbicide</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cost/Ltr</th>
+            <th>Ltr/HA</th>
+            <th>Active Ingredient</th>
+            <th>Registration</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for h in user_page %}
+            <tr>
+                <td>{{ h.herbicide }}</td>
+                <td>{{ h.cost_per_litre }}</td>
+                <td>{{ h.litres_per_hectare }}</td>
+                <td>{{ h.active_ingredient }}</td>
+                <td>{{ h.registration_status }}</td>
+                <td>
+                    <a href="{% url 'support:herbicide_update' h.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{% url 'support:herbicide_delete' h.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="6">You have not added any herbicides.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="pagination">{{ user_page.paginator.num_pages }} pages | Page {{ user_page.number }}</div>
+
+<!-- Pagination for User Herbicides -->
+<nav>
+  <ul class="pagination">
+    {% if user_page.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?user_page={{ user_page.previous_page_number }}&default_page={{ default_page.number }}&q={{ search_query }}">Previous</a>
+      </li>
+    {% endif %}
+
+    {% for num in user_page.paginator.page_range %}
+      <li class="page-item {% if num == user_page.number %}active{% endif %}">
+        <a class="page-link" href="?user_page={{ num }}&default_page={{ default_page.number }}&q={{ search_query }}">{{ num }}</a>
+      </li>
+    {% endfor %}
+
+    {% if user_page.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?user_page={{ user_page.next_page_number }}&default_page={{ default_page.number }}&q={{ search_query }}">Next</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+{% endblock %}

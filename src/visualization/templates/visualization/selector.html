@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- visualization selector -->
+<!-- Author: Kirodh Boodhraj-->
+<div class="container mt-5">
+  <div class="card shadow-sm rounded-3">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">Select Planning</h4>
+    </div>
+    <div class="card-body">
+      <form id="visualization-form" class="row g-3 align-items-end">
+
+        <!-- Planning -->
+        <div class="col-md-6">
+          <label for="planning" class="form-label fw-bold">Planning</label>
+          <select id="planning" name="planning" class="form-select" required>
+            <option value="" disabled selected>-- Select Planning --</option>
+            {% for p in plannings %}
+              <option value="{{ p.id }}">{{ p.project.name }} ({{ p.start_year }}) ({{ p.created_at }} UTC)</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!-- Submit -->
+        <div class="col-12 text-end mt-4">
+          <button type="button" class="btn btn-success px-4" onclick="goToVisualization()">
+            <i class="bi bi-bar-chart"></i> View Results
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+function goToVisualization() {
+  const planning = document.getElementById("planning").value;
+
+  if (!planning) {
+    alert("Please select a planning.");
+    return;
+  }
+
+  // Redirect to the view page for this planning
+  window.location.href = `/visualization/view/${planning}/`;
+}
+</script>
+{% endblock %}
