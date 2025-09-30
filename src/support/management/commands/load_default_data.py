@@ -24,6 +24,7 @@ class Command(BaseCommand):
         ]
 
         for growth_form in growth_form_defults:
+            print("Loading growth form: ", growth_form)
             GrowthForm.objects.get_or_create(growth_form=growth_form.lower(), user=None)
 
         #############################
@@ -54,6 +55,7 @@ class Command(BaseCommand):
                                     ]
 
         for treatment_method in treatment_method_defults:
+            print("Loading treatment method: ", treatment_method)
             TreatmentMethod.objects.get_or_create(treatment_method=treatment_method.lower(), user=None)
 
         #############################
@@ -62,6 +64,7 @@ class Command(BaseCommand):
         with open('support/management/commands/species.csv', newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
+                print("Loading species: ", row['Genus'].title())
                 growth_form_obj = GrowthForm.objects.get(growth_form=(row['Growth Form']).lower(), user=None)
 
                 Species.objects.get_or_create(
@@ -100,6 +103,8 @@ class Command(BaseCommand):
         with open('support/management/commands/herbicides.csv', newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
+                print("Loading herbicide: ", row['Herbicide'].title())
+
                 Herbicide.objects.get_or_create(
                     herbicide=row['Herbicide'].title(),
                     user=None,
@@ -126,6 +131,7 @@ class Command(BaseCommand):
         # 2. create the norms in the default set
         with open('support/management/commands/clearing_norm.csv', newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
+            print("Loading clearing norms. May take a while...")
             for row in reader:
                 growth_form_obj = GrowthForm.objects.get(growth_form=(row['Growth Form']).lower(), user=None)
                 # print((row['Treatment Method']).lower())
@@ -322,6 +328,8 @@ class Command(BaseCommand):
         }
 
         for cat_name, bands in numeric_defaults.items():
+            print("Loading numeric categories: ", cat_name)
+
             cat = category_objs[cat_name]
             for low, high, priority in bands:
                 NumericPriorityBand.objects.get_or_create(
@@ -352,6 +360,8 @@ class Command(BaseCommand):
         }
 
         for cat_name, values in text_defaults.items():
+            print("Loading text categories: ", cat_name)
+
             cat = category_objs[cat_name]
             for value, priority in values:
                 TextPriorityValue.objects.get_or_create(
