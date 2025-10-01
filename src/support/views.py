@@ -181,7 +181,7 @@ def species_create(request):
             species.save()
             return redirect('support:species_list')
     else:
-        form = SpeciesForm()
+        form = SpeciesForm(user=request.user)
     return render(request, 'support/species_form.html', {'form': form, 'action': 'Create'})
 
 # species update view
