@@ -743,7 +743,8 @@ def define_costing_mapping(request, pk):
         form = CostingAssignmentForm(
             request.POST,
             costing_values=unique_costing_values,
-            initial=existing_map
+            initial=existing_map,
+            user=request.user
         )
         if form.is_valid():
             # Save/update mappings
@@ -762,7 +763,7 @@ def define_costing_mapping(request, pk):
             initial={
                 f"costing_{val}": existing_map.get(val)
                 for val in unique_costing_values
-            }
+            }, user=request.user
         )
 
     return render(

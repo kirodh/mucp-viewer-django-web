@@ -120,11 +120,17 @@ class CostingAssignmentForm(forms.Form):
     def __init__(self, *args, **kwargs):
         costing_values = kwargs.pop("costing_values", [])
         initial_map = kwargs.pop("initial_map", {})  # handle it here
+        user = kwargs.pop("user", None)  # accept user
         super().__init__(*args, **kwargs)
 
         for val in costing_values:
+            qs = CostingModel.objects.all()
+            if user:
+                qs = qs.filter(user=user)  # only defaults + this user
+
             self.fields[f"costing_{val}"] = forms.ModelChoiceField(
-                queryset=CostingModel.objects.all(),
+                # queryset=CostingModel.objects.all(),
+                queryset=qs.order_by("name"),  # optional ordering, not all the users models now
                 required=True,
                 label=f"Assign model for costing value '{val}'",
                 initial=initial_map.get(val)  # pre-populate if available
