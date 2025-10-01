@@ -387,6 +387,21 @@ document.addEventListener('DOMContentLoaded', function () {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
+    var esriSat = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Earthstar Geographics, Maxar'
+    });
+
+    var baseMaps = {
+        "OpenStreetMap": map,
+        "Satellite": esriSat
+    };
+
+    var overlayMaps = {}; // start empty, polygons will be added dynamically
+
+
+
     // Function to assign random colors (can also do based on property)
     function getRandomColor() {
         var letters = '0123456789ABCDEF';
@@ -399,6 +414,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let geojsonLayer;  // store reference so we can remove it
     let overlaysControl; // for layer control
+
+    // Add initial layer control
+    overlaysControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
     function loadMap() {
     // Define planningId, year, budget, level (replace with your template vars if using Django)
@@ -465,12 +483,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             }).addTo(map);
 
-            // Add the layer to the existing control, or create it once
-            if (!overlaysControl) {
-                overlaysControl = L.control.layers(null, { "Polygons": geojsonLayer }).addTo(map);
-            } else {
-                overlaysControl.addOverlay(geojsonLayer, "Polygons");
-            }
+            //// Add the layer to the existing control, or create it once
+            //if (!overlaysControl) {
+            //    overlaysControl = L.control.layers(null, { "Polygons": geojsonLayer }).addTo(map);
+            //} else {
+            //    overlaysControl.addOverlay(geojsonLayer, "Polygons");
+            //}
+
+            // Update overlays
+            overlaysControl.addOverlay(geojsonLayer, "Polygons");
 
 
         });

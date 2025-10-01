@@ -113,6 +113,13 @@ document.addEventListener('DOMContentLoaded', function () {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
+    var esriSat = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Earthstar Geographics, Maxar'
+    });
+
+
     // Function to assign random colors (can also do based on property)
     function getRandomColor() {
         var letters = '0123456789ABCDEF';
@@ -153,7 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add layer control if you have multiple layers
     var baseLayers = {
-        "OSM": map
+        "OSM": map,
+        "Satellite": esriSat
     };
 
     var overlays = {
