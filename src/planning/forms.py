@@ -7,7 +7,7 @@ from django.core.exceptions import ValidationError
 from django.db.models import Q
 
 from .models import Planning, PlanningCategory, PlanningCostingMapping
-from support.models import Category, CostingModel
+from support.models import Category, CostingModel, ClearingNormSet
 from project.models import Project
 
 # planning form
@@ -38,9 +38,11 @@ class PlanningForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         if user:
+            ## for projects
             # Limit projects to those belonging to the user
             self.fields["project"].queryset = Project.objects.filter(user=user)
 
+            ## For categories
             # Get user-created category names
             user_cat_names = Category.objects.filter(user=user).values_list("name", flat=True)
 
@@ -54,6 +56,13 @@ class PlanningForm(forms.ModelForm):
             qs = qs.filter(Q(is_default=True) | Q(user=user))
 
             self.fields["categories"].queryset = qs
+
+            ## for clearing norm sets
+            # Limit projects to those belonging to the user
+            self.fields["clearing_norm_model"].queryset = ClearingNormSet.objects.filter(Q(user=None) | Q(user=user))
+
+
+
 
     def clean_standard_working_day(self):
         hours = self.cleaned_data["standard_working_day"]
