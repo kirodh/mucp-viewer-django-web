@@ -29,7 +29,7 @@
     <tbody>
         {% for h in default_page %}
             <tr>
-                <td>{{ h.herbicide }}</td>
+                <td>{{ h.herbicide|lower|capfirst }}</td>
                 <td>{{ h.cost_per_litre }}</td>
                 <td>{{ h.litres_per_hectare }}</td>
                 <td>{{ h.active_ingredient }}</td>

@@ -345,7 +345,7 @@ def clearing_norm_create(request):
             return HttpResponseForbidden("You cannot add to the APO default norm set.")
 
     if request.method == 'POST':
-        form = ClearingNormForm(request.POST)
+        form = ClearingNormForm(request.POST, user=request.user)
         if form.is_valid():
             norm = form.save(commit=False)
 
@@ -356,7 +356,7 @@ def clearing_norm_create(request):
             norm.save()
             return redirect('support:clearing_norm_list')
     else:
-        form = ClearingNormForm()
+        form = ClearingNormForm(user=request.user)
 
     return render(request, 'support/clearing_norm_form.html', {
         'form': form,

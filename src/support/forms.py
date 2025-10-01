@@ -83,7 +83,21 @@ class HerbicideForm(forms.ModelForm):
 class ClearingNormForm(forms.ModelForm):
     class Meta:
         model = ClearingNorm
-        exclude = ['user', 'clearing_norm_set']
+        exclude = ['clearing_norm_set']
+
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+
+        if user:
+            # Only show this user's + default options
+            self.fields['growth_form'].queryset = GrowthForm.objects.filter(
+                models.Q(user=None) | models.Q(user=user)
+            ).order_by('growth_form')
+
+            self.fields['treatment_method'].queryset = TreatmentMethod.objects.filter(
+                models.Q(user=None) | models.Q(user=user)
+            ).order_by('treatment_method')
 
 # clearing norm set form
 class ClearingNormSetForm(forms.ModelForm):
