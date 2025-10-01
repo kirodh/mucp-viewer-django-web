@@ -355,10 +355,10 @@ function loadData() {
             });
         }
 
-        buildLineChart("densityChart", "density", "%", "Density (%)");
-        buildLineChart("flowChart", "flow", "m³/s", "Flow (m³/s)");
+        buildLineChart("densityChart", "density", "%", "Annual Density Reduction (%)");
+        buildLineChart("flowChart", "flow", "m³/s", "Annual Flow Reduction (m³/s)");
         buildLineChart("personDaysChart", "person_days", "Person Days", "Person Days");
-        buildBarChartWithOptimal("costChart", "cost", "{{ planning.currency }}", "Cost per Year");
+        buildBarChartWithOptimal("costChart", "cost", "{{ planning.currency }}", "Annual Cost");
     });
 }
 

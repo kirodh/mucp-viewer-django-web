@@ -731,10 +731,10 @@ def visualization_pdf(request, planning_id, year, budget):
 
 
     charts = [
-        ("density", "%", "Density (%)", plot_line),
+        ("density", "%", "Annual Density Reduction (%)", plot_line),
         ("person_days", "Person Days", "Person Days", plot_line),
-        ("cost", f"{planning.currency}", "Cost per Year", plot_bar_with_optimal),
-        ("flow", "m³/s", "Flow (m³/s)", plot_line),
+        ("cost", f"{planning.currency}", "Annual Cost", plot_bar_with_optimal),
+        ("flow", "m³/s", "Annual Flow Reduction (m³/s)", plot_line),
     ]
 
     for metric, ylabel, title, plot_fn in charts:
