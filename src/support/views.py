@@ -174,7 +174,7 @@ def species_detail(request, pk):
 @login_required
 def species_create(request):
     if request.method == 'POST':
-        form = SpeciesForm(request.POST)
+        form = SpeciesForm(request.POST, user=request.user)
         if form.is_valid():
             species = form.save(commit=False)
             species.user = request.user
